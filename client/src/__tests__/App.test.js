@@ -1,5 +1,4 @@
 import React from 'react'
-import axiosMock from 'axios'
 import {render, fireEvent, cleanup, waitForElement} from 'react-testing-library'
 
 // this adds custom jest matchers from jest-dom
