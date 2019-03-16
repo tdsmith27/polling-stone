@@ -22,12 +22,13 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <h1>Welcome to Blue Ocean</h1>
+        <PollMap />
         <ul>
           {this.state.seaCreatures.map((seaCreature,i) => <li key={i}>{seaCreature}</li>)}
         </ul>
-      </div>
+      </React.Fragment>
     );
   }
 }
