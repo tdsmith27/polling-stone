@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "setup": "cd ./client && npm install ; cd ../server && npm install",
-    "test": "echo pwd && cd ./client && npm test",
+    "test": "echo pwd && cd ./client && npm test ; cd ../server && npm test",
     "launch": "cd ./server && node bin/www & cd ../client && npm run-script start &",
     "commit": "git-cz"
   },
