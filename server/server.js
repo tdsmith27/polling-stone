@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const db = require('../db/index.js')
 
+
 // open up CORS 
 app.use((_, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
