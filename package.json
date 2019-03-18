@@ -28,5 +28,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "knex": "^0.16.3",
+    "pg": "^7.9.0"
   }
 }
