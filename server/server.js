@@ -12,7 +12,6 @@ const sql = knex('test table').then((result) => {
   console.log('err:', err)
 
 })
-// console.log(sql)
 
 
 // open up CORS 
