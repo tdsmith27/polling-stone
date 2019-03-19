@@ -1,3 +1,3 @@
-const example = require('./example');
+const candidates = require("./candidates");
 
-module.exports = { example }
+module.exports = { candidates };
