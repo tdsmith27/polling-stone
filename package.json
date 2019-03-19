@@ -28,5 +28,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "mapbox-gl": "^0.53.1"
   }
 }

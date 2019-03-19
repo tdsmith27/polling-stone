@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "mapbox-gl": "^0.53.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-map-gl": "^4.1.1",
     "react-mapbox-gl": "^4.2.0",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "zipcodes": "^8.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,6 +28,7 @@
   ],
   "devDependencies": {
     "jest-dom": "^3.1.2",
+    "postcss-loader": "^3.0.0",
     "react-testing-library": "^6.0.0"
   }
 }
