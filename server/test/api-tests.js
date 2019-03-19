@@ -31,46 +31,46 @@ describe("GET /test", () => {
 });
 
 describe("GET candidates", () => {
-  it("should get all candidate data", done => {
+  it("should get all candidate data", () => {
     chai
       .request("http://localhost:8000")
       .get("/api/candidates")
-      .end((err, res) => {
+      .then((err, res) => {
         should.not.exist(err);
         should.exist(res);
         res.should.have.status(200);
         expect(res).to.be.json;
         done();
-      });
+      }).catch(err => err)
   });
 });
 
 describe("GET policies", () => {
-  it("should get all policy data", done => {
+  it("should get all policy data", () => {
     chai
       .request("http://localhost:8000")
       .get("/api/policies")
-      .end((err, res) => {
+      .then((err, res) => {
         should.not.exist(err);
         should.exist(res);
         res.should.have.status(200);
         expect(res).to.be.json;
         done();
-      });
+      }).catch(err => err)
   });
 });
 
 describe("GET voter", () => {
-  it("should get all voter data", done => {
+  it("should get all voter data", () => {
     chai
       .request("http://localhost:8000")
       .get("/api/voter")
-      .end((err, res) => {
+      .then((err, res) => {
         should.not.exist(err);
         should.exist(res);
         res.should.have.status(200);
         expect(res).to.be.json;
         done();
-      });
+      }).catch(err => err)
   });
 });
