@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const db = require('../../db/index.js')
 
-router.get("/api/voter", (req, res) => {
+router.get("/", (req, res) => {
   db.findAllVoterId(null, (err, results) => {
     if (err) {
       console.log(err)

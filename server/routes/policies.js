@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const db = require('../../db/index.js')
 
-router.get("/api/policies", (req, res) => {
+router.get("/", (req, res) => {
   db.findAllPolicies(null, (err, results) => {
     if (err) {
       console.log(err)

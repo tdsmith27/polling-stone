@@ -2,7 +2,7 @@ const router = require("express").Router();
 const db = require('../../db/index.js')
 
 // Test GET
-router.get("/", (req, res) => {
+router.get("/test", (req, res) => {
   res.json({ data: ["dolphins", "manatees", "sea turles"] });
 });
 
