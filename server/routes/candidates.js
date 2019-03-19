@@ -1,6 +1,11 @@
 const router = require("express").Router();
 const db = require('../../db/index.js')
 
+// Test GET
+router.get("/", (req, res) => {
+  res.json({ data: ["dolphins", "manatees", "sea turles"] });
+});
+
 router.get("/", (req, res) => {
   db.findAllCandidates(null, (err, results) => {
     if (err) {
@@ -12,8 +17,5 @@ router.get("/", (req, res) => {
     }
   })
 })
-// Routes for Database
-
-// Routes for APIs start here
 
 module.exports = router;
