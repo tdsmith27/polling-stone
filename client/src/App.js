@@ -5,17 +5,17 @@ const api = `http://localhost:8000/api/example`
 
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super()
-    this.state = {seaCreatures:[]}
+    this.state = { seaCreatures: [] }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     fetch(api)
-    .then(res => res.json())
-    .then(seaCreatures => {
-      this.setState({ seaCreatures: seaCreatures.data})
-    })
+      .then(res => res.json())
+      .then(seaCreatures => {
+        this.setState({ seaCreatures: seaCreatures.data })
+      })
   }
 
   render() {
@@ -23,7 +23,7 @@ class App extends Component {
       <>
         <h1>Welcome to Blue Ocean</h1>
         <ul>
-          {this.state.seaCreatures.map((seaCreature,i) => <li key={i}>{seaCreature}</li>)}
+          {this.state.seaCreatures.map((seaCreature, i) => <li key={i}>{seaCreature}</li>)}
         </ul>
       </>
     );

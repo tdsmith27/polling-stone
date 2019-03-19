@@ -10,7 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "CI=true react-scripts test --coverage",
+    "test": "CI=true react-scripts test --color --verbose --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
