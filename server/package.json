@@ -4,7 +4,7 @@
   "description": "Main Repository for Project Blue Ocean",
   "main": "server.js",
   "scripts": {
-    "start": "node bin/www",
+    "start": "nodemon bin/www",
     "test": "nyc mocha"
   },
   "repository": {

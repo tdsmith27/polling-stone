@@ -1,22 +1,21 @@
-const createError = require('http-errors');
-const logger = require('morgan');
-const express = require('express');
+const createError = require("http-errors");
+const logger = require("morgan");
+const express = require("express");
 const app = express();
 const db = require('../db/index.js')
 
-
-// open up CORS 
+// open up CORS
 app.use((_, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
-app.use(logger('dev'));
+app.use(logger("dev"));
 
 // You can place your routes here, feel free to refactor:
-const { example } = require('./routes');
-app.use('/api/example', example)
+const { candidates } = require("./routes");
+app.use("/api/candidates", candidates);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
