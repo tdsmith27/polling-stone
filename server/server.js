@@ -2,17 +2,7 @@ const createError = require('http-errors');
 const logger = require('morgan');
 const express = require('express');
 const app = express();
-
-// const db = require('../db/index.js')
-const config = require('../knexfile')['production'];
-const knex = require('knex')(config)
-const sql = knex('test table').then((result) => {
-  console.log('successful open connection to hosted database')
-}).catch((err) => {
-  console.log('err:', err)
-
-})
-//change
+const db = require('../db/index.js')
 
 
 // open up CORS 

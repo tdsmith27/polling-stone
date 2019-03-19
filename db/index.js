@@ -1,12 +1,9 @@
-// const knex = require('knex')
-// const knexfile = require('../knexfile')
-// // var pg = require('knex')({ client: 'pg' });
+const config = require('../knexfile')['production'];
+const knex = require('knex')(config)
+const sql = knex('test table').then((result) => {
+  console.log('successful open connection to hosted database')
+}).catch((err) => {
+  console.log('err:', err)
+})
 
-// let connection = knexfile.from('test table').select('*')
-//   .then((rows) => {
-//     console.log('connected to database bitch')
-//   })
-
-// //database query route endpoints go here
-
-// module.exports = connection;
+module.exports = sql
