@@ -107,5 +107,3 @@ describe("GET bios", () => {
       }).catch(err => err)
   });
 });
-
-
