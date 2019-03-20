@@ -1,13 +1,19 @@
-import React, { Component } from "react";
-import "./App.css";
+
+import React, { Component } from 'react';
+import './App.css';
+import { Head, HeadRoutes } from './header'
+import VoterInfoDetail from './components/VoterInfoDetail.js'
+
+
 import { Router, Link } from "@reach/router";
 import LandingPage from "./components/LandingPage";
-import VoterInfoDetail from "./components/VoterInfoDetail";
+
 
 const api = `http://localhost:8000/api/example`;
 
 class App extends Component {
   constructor() {
+
     super();
     this.state = { seaCreatures: [] };
   }
@@ -17,14 +23,16 @@ class App extends Component {
   render() {
     return (
       <>
-        <div style={header}>
-          <Link to="/">Back home</Link>{" "}
-        </div>
+
+        <Head />
+        <HeadRoutes />
+        <VoterInfoDetail />
         <Router>
           <LandingPage path="/" />
           <CandidateList path="candidates/*" />
           <VoterInfoDetail path="voterInfo/*" />
         </Router>
+
       </>
     );
   }
