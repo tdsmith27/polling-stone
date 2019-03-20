@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Head, HeadRoutes } from './header'
 import VoterInfoDetail from './components/VoterInfoDetail.js'
+import CandidateCards from './components/CandidateCards.js';
 
 
 import { Router, Link } from "@reach/router";
