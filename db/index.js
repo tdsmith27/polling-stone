@@ -43,10 +43,24 @@ const findAllVoterId = (err, cb) => {
     })
 }
 
+const findCandidatePage = (err, cb) => {
+  knex.column('first-name', 'last-name', 'photo-url', 'party').select().from('candidates')
+    .then((results) => {
+      cb(null, results)
+      console.log('results:', results)
+    })
+    .catch((err) => {
+      cb(err)
+      console.log('err:', err)
+    })
+}
+
+
 module.exports = {
   initialConnection,
   findAllCandidates,
   findAllPolicies,
-  findAllVoterId
+  findAllVoterId,
+  findCandidatePage
 
 }

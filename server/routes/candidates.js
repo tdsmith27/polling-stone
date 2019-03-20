@@ -12,10 +12,11 @@ router.get("/", (req, res) => {
       console.log(err)
       res.end()
     } else {
-      console.log("success candidates retrieval")
+      console.log("success all candidates retrieval")
       res.status(200).json(results)
     }
   })
 })
+
 
 module.exports = router;
