@@ -2,23 +2,21 @@ import React from 'react';
 import { Layout, Menu } from 'antd';
 import "antd/dist/antd.css";
 import { Router, Link } from "@reach/router"
+import LandingPage from "./LandingPage";
+import VoterInfoDetail from './VoterInfoDetail.js';
 
-// import Home from './pathToHome'
-// import VoterInfo from './pathToVoterInfo'
 // import CandidateList from './pathToCandidate'
 
 const { Header } = Layout;
 
-const Home = () => <div>Home placeholder</div>
 const Candidates = () => <div>Candidates placeholder</div>
-const VoterInfo = () => <div>Voter Info placeholder</div>
 
-const HeadRoutes = (props) => (
+const MainRoutes = (props) => (
   <>
-    <Router style={{ color: 'blue' }}>
-      <Home path="/" />
+    <Router primary={false}>
+      <LandingPage path="/" />
       <Candidates path="candidates/*" />
-      <VoterInfo path="voter-info/*" />
+      <VoterInfoDetail path="voterInfo/*" />
     </Router>
   </>
 )
@@ -39,12 +37,12 @@ const Head = (props) => (
         </Link>
         </Menu.Item>
         <Menu.Item key="2">
-          <Link to="/candidates/*">
+          <Link to="candidates">
             Candidates
         </Link>
         </Menu.Item>
         <Menu.Item key="3">
-          <Link to="/voter-info/*">
+          <Link to="voterInfo">
             Voter Info
         </Link>
         </Menu.Item>
@@ -53,4 +51,4 @@ const Head = (props) => (
   </>
 )
 
-export { Head, HeadRoutes };
+export { Head, MainRoutes };
