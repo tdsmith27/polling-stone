@@ -19,7 +19,6 @@ class CandidateCards extends React.Component {
       this.setState({
         candidates: info.data,
       })
-      console.log(this.state)
     })
     .catch((err) => {
       console.log('Error fetching candidate card info from API')
@@ -29,7 +28,8 @@ class CandidateCards extends React.Component {
     return (
       <div style={{display:'flex',flexWrap:'wrap',width:'100%','backgroundColor':'black'}}>
       {this.state.candidates.map((candidate) => {
-        return (<Card
+        return (
+        <Card
         hoverable
         style={{width: '23%', height: '370px', margin: '10px auto 15px', textAlign: 'center', borderRadius:'3px' }}
         >
