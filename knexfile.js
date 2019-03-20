@@ -11,6 +11,7 @@ const options = {
       password: 'Password1',
       database: 'votingapp'
     },
+    pool: { min: 1, max: 7 }
   }
 }
 
