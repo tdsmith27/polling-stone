@@ -3,6 +3,8 @@ import { Row, Col, Card, Layout, Menu, Anchor } from "antd";
 import "antd/dist/antd.css";
 import { Router, Link } from "@reach/router";
 import SideBar from "./SideBar";
+import RegCheckForm from '../regCheckForm';
+
 
 const { Meta } = Card;
 const { Header, Footer, Sider, Content } = Layout;
@@ -167,7 +169,7 @@ const Register = () => {
   return (
     <Content>
       <div id="register-placeholder">
-        <h3>Register Placeholder</h3>
+        <RegCheckForm />
       </div>
     </Content>
   );

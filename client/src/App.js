@@ -12,13 +12,13 @@ import LandingPage from "./components/LandingPage";
 const api = `http://localhost:8000/api/example`;
 
 class App extends Component {
-  constructor() {
+  constructor () {
 
     super();
     this.state = { seaCreatures: [] };
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   render() {
     return (
@@ -26,7 +26,7 @@ class App extends Component {
 
         <Head />
         <HeadRoutes />
-        <VoterInfoDetail />
+        {/* <VoterInfoDetail /> */}
         <Router>
           <LandingPage path="/" />
           <CandidateList path="candidates/*" />
