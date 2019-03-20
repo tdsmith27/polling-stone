@@ -4,9 +4,9 @@
   "description": "Congratulations and welcome to your first day at Blue Ocean! We are literally an underwater agile software development company.",
   "main": "index.js",
   "scripts": {
-    "setup": "cd ./client && npm install ; cd ../server && npm install",
+    "setup": "npm install && cd ./client && npm install ; cd ../server && npm install",
     "test": "echo pwd && cd ./client && npm test ; cd ../server && npm test",
-    "launch": "cd ./server && node bin/www & cd ../client && npm run-script start &",
+    "launch": "cd ./server && node bin/www & cd ./client && npm run-script start &",
     "commit": "git-cz"
   },
   "repository": {
@@ -30,7 +30,8 @@
     }
   },
   "dependencies": {
-    "jquery": "^3.3.1",
-    "mapbox-gl": "^0.53.1"
+    "chai-http": "^4.2.1",
+    "knex": "^0.16.3",
+    "pg": "^7.9.0"
   }
 }

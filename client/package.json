@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jquery": "^3.3.1",
     "mapbox-gl": "^0.53.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
@@ -14,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "CI=true react-scripts test",
+    "test": "CI=true react-scripts test --color --verbose --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
