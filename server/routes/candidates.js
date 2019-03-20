@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const db = require('../../db/index.js')
+const db = require("../../db/index.js");
 
 // Test GET
 router.get("/test", (req, res) => {
@@ -9,14 +9,14 @@ router.get("/test", (req, res) => {
 router.get("/", (req, res) => {
   db.findAllCandidates(null, (err, results) => {
     if (err) {
-      console.log(err)
-      res.end()
+      console.log(err);
+      res.end();
     } else {
-      console.log("success all candidates retrieval")
-      res.status(200).json(results)
+      console.log("success candidates retrieval");
+      res.status(200).json(results);
     }
-  })
-})
+  });
+});
 
 
 module.exports = router;

@@ -41,7 +41,8 @@ describe("GET candidates", () => {
         res.should.have.status(200);
         expect(res).to.be.json;
         done();
-      }).catch(err => err)
+      })
+      .catch(err => err);
   });
 });
 
@@ -56,7 +57,8 @@ describe("GET policies", () => {
         res.should.have.status(200);
         expect(res).to.be.json;
         done();
-      }).catch(err => err)
+      })
+      .catch(err => err);
   });
 });
 
@@ -71,7 +73,8 @@ describe("GET voter", () => {
         res.should.have.status(200);
         expect(res).to.be.json;
         done();
-      }).catch(err => err)
+      })
+      .catch(err => err);
   });
 });
 

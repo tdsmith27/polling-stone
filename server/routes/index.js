@@ -4,4 +4,6 @@ const voter = require('./voter')
 const candidateInfoPage = require('./candidateInfoPage')
 const bios = require('./bios')
 
+
 module.exports = { candidates, policies, voter, candidateInfoPage, bios };
+
