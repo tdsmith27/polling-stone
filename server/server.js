@@ -2,7 +2,7 @@ const createError = require("http-errors");
 const logger = require("morgan");
 const express = require("express");
 const app = express();
-const db = require("../db/index.js");
+const db = require("./db/index");
 const { join } = require("path");
 
 // open up CORS
