@@ -35,7 +35,7 @@ const VoterId = () => {
         style={{ width: 200 }}
       >
         {states.map((ele, i) => {
-          return <Option key={i}>{ele}</Option>
+          return <Option key={ele}>{ele}</Option>
         })}
       </Select>
       <StateId usaState={choice}/>
