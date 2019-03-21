@@ -26,12 +26,18 @@
   },
   "homepage": "https://github.com/gSchool/blue-ocean-starter#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
     "chai-http": "^4.2.1",
     "debug": "^4.1.1",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "puppeteer": "^1.13.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
     "http-errors": "^1.7.2",
     "install": "^0.12.2",
     "mocha": "^6.0.2",

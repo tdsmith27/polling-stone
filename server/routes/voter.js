@@ -2,13 +2,17 @@ const router = require("express").Router();
 const db = require("../../db/index.js");
 
 router.get("/", (req, res) => {
-  db.findAllVoterId(null, (err, results) => {
+  db.findAllStates(null, (err, results) => {
     if (err) {
       console.log(err);
       res.end();
     } else {
-      console.log("success voter retrieval");
-      res.status(200).json(results);
+      //getting an array of objects, turn into an of names
+      let states = [];
+      results.forEach((ele) => {
+        states.push(ele.state)
+      })
+      res.status(200).json(states);
     }
   });
 });

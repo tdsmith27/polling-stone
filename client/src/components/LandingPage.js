@@ -24,7 +24,7 @@ const LandingPage = props => (
         <Meta
           title="Candidates"
           description="Click here to get info on your 2020 presidential candidates"
-        />
+          />
       </Card>
     </Link>
     <Link to="voterInfo">
@@ -35,7 +35,7 @@ const LandingPage = props => (
         <Meta
           title="Voter Info"
           description="Click here to get info on where to vote, what to bring, and if you are registered"
-        />
+          />
       </Card>
     </Link>
   </div>
