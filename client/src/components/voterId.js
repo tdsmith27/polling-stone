@@ -10,7 +10,6 @@ const VoterId = () => {
 
   let [states, setStates] = useState([]);
   let [choice, setChoice] = useState("Alabama");
-  const children = [];
 
   useEffect(() => {
     const api = 'http://localhost:8000/api/voter';
@@ -22,15 +21,9 @@ const VoterId = () => {
       })
      .catch((err) => console.log('error', err))
   }, [])
-
-
-  for (let i = 0; i < states.length; i++) {
-    children.push(<Option key={states[i]}>{states[i]}</Option>);
-  }
   
   function handleChange(value) {
     setChoice(value)
-
   }
 
   return (
@@ -41,7 +34,9 @@ const VoterId = () => {
         onChange={handleChange}
         style={{ width: 200 }}
       >
-        {children}
+        {states.map((ele, i) => {
+          return <Option key={ele}>{ele}</Option>
+        })}
       </Select>
       <StateId usaState={choice}/>
     </>
