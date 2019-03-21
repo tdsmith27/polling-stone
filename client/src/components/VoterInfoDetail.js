@@ -30,7 +30,7 @@ let VoterInfoDetail = () => {
     <Layout>
       <Layout>
         < SideBar />
-        <Content style={{ height: "80vh" }}>
+        <Content style={{ height: "99vh" }}>
           <NavRoutes />
         </Content>
       </Layout>
