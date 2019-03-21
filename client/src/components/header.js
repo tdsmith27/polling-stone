@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 import { Router, Link } from "@reach/router";
 import LandingPage from "./LandingPage";
 import VoterInfoDetail from './VoterInfoDetail.js';
-import CandidateCards from './CandidateCards';
+import CandidateRouter from './CandidateCards';
 
 const { Header } = Layout;
 
@@ -12,7 +12,7 @@ const MainRoutes = (props) => (
   <>
     <Router primary={false}>
       <LandingPage path="/" />
-      <CandidateCards path="candidates/*" />
+      <CandidateRouter path="candidates/*" />
       <VoterInfoDetail path="voterInfo/*" />
     </Router>
   </>
