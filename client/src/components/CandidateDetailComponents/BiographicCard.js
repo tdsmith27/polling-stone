@@ -15,7 +15,7 @@ class BioCard extends Component {
       margin: 0
     };
     this.cardStyle = {
-      width:"50%", 
+      width:"45%", 
       height: "600px", 
       display:"inline-block"
     };
