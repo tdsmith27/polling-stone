@@ -48,8 +48,8 @@ class BioCard extends Component {
           <p>{this.props.bio ? this.props.bio.bio : null}</p>
           <p>{this.props.details ? this.props.details.party : null}</p>
           <p style={this.pStyle}>{this.props.details ? this.props.details.birthDate : null}</p>
-          <p style={this.pStyle}>Twitter <a href={this.props.details ? `http://twitter.com/${this.props.details.twitter}` : null}>@{this.props.details ? this.props.details.twitter: null}</a></p>
-          <p style={this.pStyle}><a href={this.props.details ? `${this.props.details.campaignLink}` : null}>{this.props.details ? this.props.details.campaignLink: null}</a></p>
+          <p style={this.pStyle}>Twitter <a target="_blank" href={this.props.details ? `http://twitter.com/${this.props.details.twitter}` : null}>@{this.props.details ? this.props.details.twitter: null}</a></p>
+          <p style={this.pStyle}><a target="_blank" href={this.props.details ? `${this.props.details.campaignLink}` : null}>{this.props.details ? this.props.details.campaignLink: null}</a></p>
         </Card>
         <Photo 
         image={this.props.details ? this.props.details.photoUrl : null} 
