@@ -5,10 +5,9 @@ router.get('/:state', (req, res) => {
   let state = req.params.state;
   db.getStateIdLaws(state, (err, results) => {
     if (err) {
-      console.log('error on voterId API: ', err)
-      res.end()
+      next(err);
     } else {
-      res.send(results)
+      res.status(200).send(results);
     }
   })
 })
