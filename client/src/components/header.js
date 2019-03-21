@@ -1,11 +1,10 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
 import "antd/dist/antd.css";
-import { Router, Link } from "@reach/router"
+import { Router, Link } from "@reach/router";
 import LandingPage from "./LandingPage";
 import VoterInfoDetail from './VoterInfoDetail.js';
-
-import CandidateCards from './CandidateCards'
+import CandidateCards from './CandidateCards';
 
 const { Header } = Layout;
 
@@ -22,11 +21,10 @@ const MainRoutes = (props) => (
 const Head = (props) => (
   <>
     <Header test-id='header' className="header">
-      {/* <div className="logo" /> */}
       <Menu
         theme="dark"
         mode="horizontal"
-        defaultSelectedKeys={['1']}
+        selectable={false}
         style={{ lineHeight: '64px' }}
       >
         <Menu.Item key="1">
