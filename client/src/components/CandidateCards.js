@@ -4,9 +4,6 @@ import { Card } from 'antd';
 import axios from 'axios';
 import CandidateDetail from './CandidateDetail.js'
 
-
-const { Meta } = Card;
-
 const CandidateRouter = (props) => (
   <>
     <Router primary={false}>
