@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PollMap from "./components/PollMap.js";
+import CandidateDetail from './components/CandidateDetail.js'
 import "./App.css";
 import { Head, MainRoutes } from "./components/header";
 
