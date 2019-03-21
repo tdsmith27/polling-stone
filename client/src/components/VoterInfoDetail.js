@@ -3,6 +3,10 @@ import { Row, Col, Card, Layout, Menu, Anchor } from "antd";
 import "antd/dist/antd.css";
 import { Router, Link } from "@reach/router";
 import SideBar from "./SideBar";
+import RegCheckForm from './regCheckForm'
+import VoterId from './voterId'
+import PollMap from './PollMap'
+
 
 const { Meta } = Card;
 const { Header, Footer, Sider, Content } = Layout;
@@ -25,7 +29,7 @@ let VoterInfoDetail = () => {
   return (
     <Layout>
       <Layout>
-        < SideBar/>
+        < SideBar />
         <Content style={{ height: "80vh" }}>
           <NavRoutes />
         </Content>
@@ -147,7 +151,7 @@ const WhatToBring = () => {
   return (
     <Content>
       <div id="what-to-bring">
-        <h3>What to Bring on Voting Day Placeholder</h3>
+        <VoterId />
       </div>
     </Content>
   );
@@ -156,8 +160,8 @@ const WhatToBring = () => {
 const HowAndWhere = () => {
   return (
     <Content>
-      <div id="how-and-where-placeholder">
-        <h3>How And Where Placeholder</h3>
+      <div id="how-and-where-placeholder" style={{ width: "80vw", height: '80vh' }}>
+        <PollMap />
       </div>
     </Content>
   );
@@ -167,7 +171,7 @@ const Register = () => {
   return (
     <Content>
       <div id="register-placeholder">
-        <h3>Register Placeholder</h3>
+        <RegCheckForm />>
       </div>
     </Content>
   );
