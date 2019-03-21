@@ -8,7 +8,6 @@ router.get("/", (req, res) => {
       console.log(err)
       res.end()
     } else {
-      console.log("success candidates page info retrieval")
       res.status(200).json(results)
     }
   })

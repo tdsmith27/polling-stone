@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 import { Card, Col, Row } from "antd";
-import axios from "axios";
+import Axios from "axios";
 
 const myStyles = {
   height: "50vh",
@@ -15,12 +15,8 @@ const StateId = props => {
 
   useEffect(() => {
     setUsaState(props.usaState)
-    axios
-      .get(`http://localhost:8000/api/voterId/${usaState}`, {
-        params: {
-          id: ""
-        }
-      })
+    Axios
+      .get(`http://localhost:8000/api/voterId/${usaState}`)
       .then(response => {
         setInPerson(response.data[0].in_person);
         setAbsentee(response.data[0].absentee);

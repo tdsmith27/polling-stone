@@ -8,7 +8,6 @@ router.get("/:id", (req, res) => {
       console.log(err);
       res.end();
     } else {
-      console.log("success policies retrieval");
       res.status(200).json(results);
     }
   });
