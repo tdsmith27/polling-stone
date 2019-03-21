@@ -6,8 +6,9 @@ router.get("/test", (req, res) => {
   res.json({ data: ["dolphins", "manatees", "sea turles"] });
 });
 
-router.get("/", (req, res) => {
-  db.findAllCandidates(null, (err, results) => {
+router.get("/:id", (req, res) => {
+  const candId = req.params.id;
+  db.findAllCandidates(candId, (err, results) => {
     if (err) {
       console.log(err);
       res.end();

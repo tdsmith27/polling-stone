@@ -11,17 +11,18 @@ const initialConnection = knex("test table")
 
 const getStateIdLaws = (state, cb) => {
   knex.select()
-  .table('voter-id')
-  .where('state', `${state}`)
-  .then((data) => cb(null, data))
-  .catch((err) => {
-    cb(err)
-    console.log('there was an error inserting row', err)
-  })
+    .table('voter-id')
+    .where('state', `${state}`)
+    .then((data) => cb(null, data))
+    .catch((err) => {
+      cb(err)
+      console.log('err:', err)
+    })
 }
 
-const findAllCandidates = (err, cb) => {
+const findAllCandidates = (id, cb) => {
   knex("candidates")
+    .where('id', id)
     .then(results => {
       cb(null, results);
     })
@@ -31,8 +32,9 @@ const findAllCandidates = (err, cb) => {
     });
 };
 
-const findAllPolicies = (err, cb) => {
+const findAllPolicies = (id, cb) => {
   knex("policies")
+    .where('id', id)
     .then(results => {
       cb(null, results);
     })
@@ -44,19 +46,18 @@ const findAllPolicies = (err, cb) => {
 
 const findAllStates = (err, cb) => {
   knex.select('state')
-  .table('voter-id')
-  .then((data) => cb(null, data))
-  .catch((err) => {
-    cb(err)
-    console.log('there was an error inserting row', err)
-  })
+    .table('voter-id')
+    .then((data) => cb(null, data))
+    .catch((err) => {
+      cb(err)
+      console.log('err:', err)
+    })
 };
 
 const findCandidatePage = (err, cb) => {
   knex.column('firstName', 'lastName', 'photoUrl', 'party').select().from('candidates')
     .then((results) => {
       cb(null, results)
-      console.log('results:', results)
     })
     .catch((err) => {
       cb(err)
@@ -64,11 +65,11 @@ const findCandidatePage = (err, cb) => {
     })
 }
 
-const findAllBios = (err, cb) => {
+const findAllBios = (id, cb) => {
   knex('bios')
+    .where('id', id)
     .then((results) => {
       cb(null, results)
-      console.log('results:', results)
     })
     .catch((err) => {
       cb(err)

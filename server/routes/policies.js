@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const db = require("../../db/index.js");
 
-router.get("/", (req, res) => {
-  db.findAllPolicies(null, (err, results) => {
+router.get("/:id", (req, res) => {
+  const candId = req.params.id;
+  db.findAllPolicies(candId, (err, results) => {
     if (err) {
       console.log(err);
       res.end();
