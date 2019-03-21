@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './CandidateDetailComponents/CandidateDetail.css';
 import BiographicCard from './CandidateDetailComponents/BiographicCard.js'
 import PolicyBlock from './CandidateDetailComponents/PolicyBlock.js';
 import Axios from 'axios';
@@ -38,26 +37,25 @@ export default class App extends Component {
       'Hunter': 24,
       'Kroell': 25,
       'Schriner': 26
-    }
-    this.vote = this.candidateDictionary[this.props.candId] || Math.floor(Math.random()*25)
-    this.server = process.env.SERVER || 'http://localhost:8000'
-  }
-  //This function randomly selects an index location to simulate being selected from a page.
+    };
+    this.vote = this.candidateDictionary[this.props.candId] || Math.floor(Math.random()*25);
+    this.server = process.env.SERVER || 'http://localhost:8000';
+  };
   betterThanDemocracy() {
     Axios.get(`${this.server}/api/candidates/${this.vote}`)
       .then(data => this.setState({details: data.data[0]}) )
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
 
       Axios.get(`${this.server}/api/bios/${this.vote}`)
       .then(data => this.setState({bio: data.data[0]}))
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
 
       Axios.get(`${this.server}/api/policies/${this.vote}`)
         .then(data => this.setState({policies: data.data[0]}))
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
   }
   componentDidMount() {
-    this.betterThanDemocracy()
+    this.betterThanDemocracy();
   }
   render() {
     return (
@@ -67,9 +65,8 @@ export default class App extends Component {
           details={this.state.details}
           policies={this.state.policies} 
         />
-        {/* <Photo image={this.trumpTest.photo} /> */}
         <PolicyBlock policies={this.state.policies} candidate={this.trumpTest}/>
       </div>
     )
-  }
-}
+  };
+};

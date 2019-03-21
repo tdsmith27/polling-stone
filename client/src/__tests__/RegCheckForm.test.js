@@ -3,7 +3,7 @@ import { render, fireEvent, cleanup, waitForElement, configure } from 'react-tes
 
 // this adds custom jest matchers from jest-dom
 import 'jest-dom/extend-expect'
-import RegCheckForm from '../regCheckForm';
+import RegCheckForm from '../RegCheckForm';
 
 afterEach(cleanup);
 configure({ testIdAttribute: 'test-id' });

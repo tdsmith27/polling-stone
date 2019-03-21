@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Head, MainRoutes } from "./components/header";
+import { Head, MainRoutes } from "./components/Header";
 
 const App = () => {
 

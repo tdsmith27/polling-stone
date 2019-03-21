@@ -5,7 +5,6 @@ import Photo from './CandidatePhoto.js'
 class BioCard extends Component {
   constructor(props) {
     super(props)
-    // this.bioCardRef = React.createRef(this.containerNode);
     this.state = {
       height: 0,
       width: 0,
@@ -21,7 +20,7 @@ class BioCard extends Component {
     };
   }
   //This function, along with with the ref to which it points,
-  //were the bulk of an attempt to get the picture size automatically
+  //are the bulk of an attempt to get the picture sized automatically
   //based on the size of the card on this page. 
   measure() {
     const {clientWidth, clientHeight} = this.state.bioCardRef.current.container;
@@ -48,13 +47,22 @@ class BioCard extends Component {
           <p>{this.props.bio ? this.props.bio.bio : null}</p>
           <p>{this.props.details ? this.props.details.party : null}</p>
           <p style={this.pStyle}>{this.props.details ? this.props.details.birthDate : null}</p>
-          <p style={this.pStyle}>Twitter <a href={this.props.details ? `http://twitter.com/${this.props.details.twitter}` : null}>@{this.props.details ? this.props.details.twitter: null}</a></p>
-          <p style={this.pStyle}><a href={this.props.details ? `${this.props.details.campaignLink}` : null}>{this.props.details ? this.props.details.campaignLink: null}</a></p>
+          <p style={this.pStyle}>Twitter 
+            <a href={this.props.details ? `http://twitter.com/${this.props.details.twitter}` : null}>
+              @{this.props.details ? this.props.details.twitter: null}
+            </a>
+          </p>
+          <p style={this.pStyle}>
+            <a href={this.props.details ? `${this.props.details.campaignLink}` : null}>
+              {this.props.details ? this.props.details.campaignLink: null}
+            </a>
+          </p>
         </Card>
         <Photo 
-        image={this.props.details ? this.props.details.photoUrl : null} 
-        maxHeight={this.state.height} 
-        maxWidth={this.state.width}/>
+          image={this.props.details ? this.props.details.photoUrl : null} 
+          maxHeight={this.state.height} 
+          maxWidth={this.state.width}
+        />
       </>
     )
   }

@@ -3,7 +3,7 @@ import { render, cleanup, configure } from 'react-testing-library'
 
 // this adds custom jest matchers from jest-dom
 import 'jest-dom/extend-expect'
-import Head from '../header';
+import Head from '../Header';
 
 afterEach(cleanup);
 configure({ testIdAttribute: 'test-id' });
