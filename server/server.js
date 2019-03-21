@@ -3,6 +3,7 @@ const logger = require("morgan");
 const express = require("express");
 const app = express();
 const db = require("../db/index.js");
+const { join } = require("path");
 
 // open up CORS
 app.use((_, res, next) => {
@@ -16,15 +17,22 @@ app.use((_, res, next) => {
 
 app.use(logger("dev"));
 
-
 // You can place your routes here, feel free to refactor:
-const { candidates, policies, voter, candidateInfoPage, bios } = require("./routes");
+const {
+  candidates,
+  policies,
+  voter,
+  candidateInfoPage,
+  bios
+} = require("./routes");
+
+app.use(express.static(join(__dirname, "../client/build")));
 
 app.use("/api/candidates", candidates);
 app.use("/api/policies", policies);
 app.use("/api/voter", voter);
-app.use('/api/candidateinfopage', candidateInfoPage)
-app.use("/api/bios", bios)
+app.use("/api/candidateinfopage", candidateInfoPage);
+app.use("/api/bios", bios);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
