@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const db = require('../../db/index.js');
+const db = require("../db/index.js");
 
 router.get('/:state', (req, res) => {
   let state = req.params.state;
