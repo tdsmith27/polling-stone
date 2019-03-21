@@ -5,8 +5,7 @@ const db = require('../../db/index.js')
 router.get("/", (req, res) => {
   db.findCandidatePage(null, (err, results) => {
     if (err) {
-      console.log(err)
-      res.end()
+      next(err);
     } else {
       res.status(200).json(results)
     }

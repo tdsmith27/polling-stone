@@ -26,18 +26,10 @@ const StateId = props => {
       });
   });
 
-  const renderInPerson = () => {
-    let newText = inPerson.split('\n').map((paragraph, i) => {
+  const renderText = (voter) => {
+    return voter.split('\n').map((paragraph, i) => {
       return <p key={i}>{paragraph}</p>;
     });
-    return newText
-  }
-
-  const renderAbsentee = () => {
-    let newText = absentee.split('\n').map((paragraph, i) => {
-      return <p key={i}>{paragraph}</p>;
-    });
-    return newText
   }
 
   return (
@@ -46,12 +38,12 @@ const StateId = props => {
       <Row gutter={16}>
         <Col span={12}>
           <Card title="In-person Voting" bordered={false} style={myStyles}>
-            {renderInPerson()}
+            {renderText(inPerson)}
           </Card>
         </Col>
         <Col span={12}>
           <Card title="Absentee Voting" bordered={false} style={myStyles}>
-            <p>{renderAbsentee()}</p>
+            <p>{renderText(absentee)}</p>
           </Card>
         </Col>
       </Row>
