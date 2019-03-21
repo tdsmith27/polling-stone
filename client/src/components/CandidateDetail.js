@@ -12,7 +12,34 @@ export default class App extends Component {
       bio: '',
       policies: []
     }
-    this.vote = props.candId || Math.floor(Math.random()*25)
+    this.candidateDictionary = {
+      'Trump': 2,
+      'Weld': 3,
+      'Booker': 4,
+      'Buttigieg': 5,
+      'Castro': 6,
+      'Delaney': 7,
+      'Gabbard': 8,
+      'Gillibrand': 9,
+      'Harris': 10,
+      'Hickenlooper Jr.': 11,
+      'Inslee': 12,
+      'Klobuchar': 13,
+      'Messam': 14,
+      'O\'rourke': 15,
+      'Sanders': 16,
+      'Warren': 17,
+      'Williamson': 18,
+      'Yang': 19,
+      'Kokesh': 20,
+      'McAfee': 21,
+      'Supreme': 22,
+      'Vohra': 23,
+      'Hunter': 24,
+      'Kroell': 25,
+      'Schriner': 26
+    }
+    this.vote = this.candidateDictionary[this.props.candId] || Math.floor(Math.random()*25)
     this.server = process.env.SERVER || 'http://localhost:8000'
   }
   //This function randomly selects an index location to simulate being selected from a page.
