@@ -22,8 +22,6 @@ const StateId = props => {
         }
       })
       .then(response => {
-        console.log("use effect response", response.data);
-        //setUsaState(response.data[0].state);
         setInPerson(response.data[0].in_person);
         setAbsentee(response.data[0].absentee);
       })
