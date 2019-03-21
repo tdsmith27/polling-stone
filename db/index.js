@@ -43,7 +43,7 @@ const findAllVoterId = (err, cb) => {
 };
 
 const findCandidatePage = (err, cb) => {
-  knex.column('first-name', 'last-name', 'photo-url', 'party').select().from('candidates')
+  knex.column('firstName', 'lastName', 'photoUrl', 'party').select().from('candidates')
     .then((results) => {
       cb(null, results)
       console.log('results:', results)
