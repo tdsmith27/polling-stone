@@ -41,7 +41,7 @@ let VoterInfoDetail = () => {
 //side bar implementation
 let NavRoutes = () => {
   return (
-    <Router>
+    <Router primary={false}>
       <VoterInfo path="/" />
       <WhatToBring path="what-to-bring" />
       <HowAndWhere path="how-and-where" />
