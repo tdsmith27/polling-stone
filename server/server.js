@@ -24,7 +24,8 @@ const {
   policies,
   voter,
   candidateInfoPage,
-  bios
+  bios,
+  voterId
 } = require("./routes");
 
 app.use(express.static(join(__dirname, "../client/build")));
@@ -37,12 +38,12 @@ app.use("/api/bios", bios)
 app.use('/api/voterId/', voterId)
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
