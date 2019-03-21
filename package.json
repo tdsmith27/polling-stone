@@ -7,7 +7,8 @@
     "setup": "npm install && cd ./client && npm install ; cd ../server && npm install",
     "test": "echo pwd && cd ./client && npm test ; cd ../server && npm test",
     "launch": "cd ./server && node bin/www & cd ./client && npm run-script start &",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "pm2-start": "npm run setup && cd ./client && npm run build && cd ../server && npm run start"
   },
   "repository": {
     "type": "git",
