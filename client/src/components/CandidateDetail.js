@@ -12,7 +12,7 @@ export default class App extends Component {
       bio: '',
       policies: []
     }
-    this.vote = Math.floor(Math.random()*25)
+    this.vote = props.candId || Math.floor(Math.random()*25)
     this.server = process.env.SERVER || 'http://localhost:8000'
   }
   //This function randomly selects an index location to simulate being selected from a page.
