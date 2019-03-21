@@ -61,7 +61,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div test-id='ancestor' style={{backgroundColor: '#ECECEC', padding: '20px', width: '75%' }}>
+      <div test-id='ancestor' style={{backgroundColor: '#C0C0C0', padding: '20px', width: '100%' }}>
         <BiographicCard 
           bio={this.state.bio} 
           details={this.state.details}
