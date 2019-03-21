@@ -5,17 +5,15 @@ import { Router, Link } from "@reach/router"
 import LandingPage from "./LandingPage";
 import VoterInfoDetail from './VoterInfoDetail.js';
 
-// import CandidateList from './pathToCandidate'
+import CandidateCards from './CandidateCards'
 
 const { Header } = Layout;
-
-const Candidates = () => <div>Candidates placeholder</div>
 
 const MainRoutes = (props) => (
   <>
     <Router primary={false}>
       <LandingPage path="/" />
-      <Candidates path="candidates/*" />
+      <CandidateCards path="candidates/*" />
       <VoterInfoDetail path="voterInfo/*" />
     </Router>
   </>
