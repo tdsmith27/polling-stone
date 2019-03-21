@@ -20,8 +20,9 @@ const getStateIdLaws = (state, cb) => {
     })
 }
 
-const findAllCandidates = (err, cb) => {
+const findAllCandidates = (id, cb) => {
   knex("candidates")
+    .where('id', id)
     .then(results => {
       cb(null, results);
     })
@@ -31,8 +32,9 @@ const findAllCandidates = (err, cb) => {
     });
 };
 
-const findAllPolicies = (err, cb) => {
+const findAllPolicies = (id, cb) => {
   knex("policies")
+    .where('id', id)
     .then(results => {
       cb(null, results);
     })
@@ -63,8 +65,9 @@ const findCandidatePage = (err, cb) => {
     })
 }
 
-const findAllBios = (err, cb) => {
+const findAllBios = (id, cb) => {
   knex('bios')
+    .where('id', id)
     .then((results) => {
       cb(null, results)
     })

@@ -20,18 +20,6 @@ class BioCard extends Component {
       display:"inline-block"
     };
   }
-  destructure() {
-   const { firstname, nickname, lastname, birthday, twitter, campaign, bio } = this.props.candidate;
-   this.setState({
-     firstname: firstname,
-     nickname: nickname,
-     lastname: lastname,
-     birthday: birthday,
-     twitter: twitter,
-     campaign: campaign,
-     bio: bio
-   })
-  }
   //This function, along with with the ref to which it points,
   //were the bulk of an attempt to get the picture size automatically
   //based on the size of the card on this page. 
@@ -43,9 +31,7 @@ class BioCard extends Component {
     })
   }
   componentDidMount() {
-    this.destructure();
     this.measure();
-    console.log(this.state.bioCardRef.current.container.clientHeight)
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.bioCardRef !== this.state.bioCardRef) {
