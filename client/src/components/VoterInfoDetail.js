@@ -171,7 +171,7 @@ const Register = () => {
   return (
     <Content>
       <div id="register-placeholder">
-        <RegCheckForm />>
+        <RegCheckForm />
       </div>
     </Content>
   );
