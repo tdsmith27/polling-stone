@@ -1,25 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col, Card, Layout, Menu, Anchor } from "antd";
+import React from "react";
+import { Layout, Menu } from "antd";
 import "antd/dist/antd.css";
-import { Router, Link } from "@reach/router";
+import { Link } from "@reach/router";
 
 //some local styling
-const { Meta } = Card;
-const { Header, Footer, Sider, Content } = Layout;
-
-const cardStyle = {
-  width: "100%",
-  height: "100%",
-  margin: "auto"
-};
-
-const imageStyle = {
-  objectFit: "scale-down",
-  height: "100px",
-  borderBottom: "solid 1px lightgray",
-  paddingBottom: "8px",
-  paddingTop: "8px"
-};
+const { Sider } = Layout;
 
 let SideBar = () => {
   return (

@@ -19,7 +19,7 @@ const VoterId = () => {
         let sorted = results.data.sort()
         setStates(sorted);
       })
-     .catch((err) => console.log('error', err))
+      .catch((err) => console.log('error', err))
   }, [])
   
   function handleChange(value) {

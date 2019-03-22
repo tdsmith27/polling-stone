@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col, Card, Layout, Menu, Anchor } from "antd";
+import React from "react";
+import { Row, Col, Card, Layout } from "antd";
 import "antd/dist/antd.css";
 import { Router, Link } from "@reach/router";
 import SideBar from "./SideBar";
@@ -9,7 +9,7 @@ import PollMap from './PollMap'
 
 
 const { Meta } = Card;
-const { Header, Footer, Sider, Content } = Layout;
+const { Content } = Layout;
 
 const cardStyle = {
   width: "100%",
