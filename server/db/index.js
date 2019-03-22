@@ -1,9 +1,14 @@
-const config = require("../knexfile")["production"];
+const path = require('path');
+require('dotenv').config(path.join(__dirname, "./.env"));
+let env = process.env.NODE_ENV
+const config = require("../knexfile")[env || 'development'];
 const knex = require("knex")(config);
 
 const initialConnection = knex("test table")
   .then(result => {
-    console.log("successful connection to hosted database, lets go team!");
+    if (env === 'production') {
+      console.log("successful connection to hosted database, lets go team!");
+    }
   })
   .catch(err => {
     console.log("err:", err);
