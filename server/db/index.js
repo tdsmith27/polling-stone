@@ -6,9 +6,6 @@ const knex = require("knex")(config);
 
 const initialConnection = knex("test table")
   .then(result => {
-    if (env === 'production') {
-      console.log("successful connection to hosted database, lets go team!");
-    }
   })
   .catch(err => {
     console.log("err:", err);
