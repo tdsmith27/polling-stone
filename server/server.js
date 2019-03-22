@@ -28,6 +28,9 @@ const {
   voterId
 } = require("./routes");
 
+//don't change app.use to app.use('/*', ....)
+
+
 app.use(express.static(join(__dirname, "../client/build")));
 
 app.use("/api/candidates", candidates);
