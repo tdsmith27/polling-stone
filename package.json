@@ -22,19 +22,12 @@
   "homepage": "https://github.com/gSchool/blue-ocean-starter#readme",
   "devDependencies": {
     "commitizen": "^3.0.7",
-    "cz-conventional-changelog": "^2.1.0",
-    "nyc": "^13.3.0"
+    "cz-conventional-changelog": "^2.1.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {
-    "chai-http": "^4.2.1",
-    "knex": "^0.16.3",
-    "mocha": "^6.0.2",
-    "pg": "^7.9.0",
-    "react-scripts": "^2.1.8"
-  }
+  "dependencies": {}
 }
