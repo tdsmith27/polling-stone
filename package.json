@@ -31,5 +31,7 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "^7.0.0"
+  }
 }
