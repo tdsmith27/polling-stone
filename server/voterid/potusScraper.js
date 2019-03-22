@@ -1,37 +1,39 @@
-const db = require('./testdb.js')
-const rp = require('request-promise');
 const $ = require('cheerio');
-const url = 'https://www.vote.org/voter-id-laws/';
+const rp = require('request-promise');
+const db = require('./seeddb.js');
 
+const url = 'https://www.vote.org/voter-id-laws/';
 const states = [];
 const inPerson = [];
 const absentee = [];
 
 rp(url)
-  .then(function(html){
-    $('.state-name', html).each(function(i, elem) {
+  .then((html) => {
+    $('.state-name', html).each((i) => {
       states[i] = $(this).text().replace(/\n/g, '');
-    })
-    $('td[data-title="Voter ID Requirements - In Person"]', html).each(function(i, elem) {
+    });
+    $('td[data-title="Voter ID Requirements - In Person"]', html).each((i) => {
       inPerson[i] = $(this).text();
-    })
-    $('td[data-title="Voter ID Requirements - Absentee"]', html).each(function(i, elem) {
+    });
+    $('td[data-title="Voter ID Requirements - Absentee"]', html).each((i) => {
       absentee[i] = $(this).text();
-    })
+    });
   })
-  .then(async function() {
+  .then(async () => {
     let row = {};
-    for (let i = 0; i < states.length; i++) {
-      //console.log(states[i], inPerson[i], absentee[i])
-      row = {state: states[i], in_person: inPerson[i], absentee: absentee[i]}
-      //console.log('each row in scraper ', row)
+    for (let i = 0; i < states.length; i++) { //eslint-disable-line
+      row = {
+        state: states[i],
+        in_person: inPerson[i],
+        absentee: absentee[i],
+      };
       try {
-        let success = await db.insertStates(row)
+        await db.insertStates(row); //eslint-disable-line
       } catch (error) {
-        console.log('caught', error.message);
+        console.log('caught', error.message); //eslint-disable-line
       }
     }
   })
-  .catch(function(err){
-    
+  .catch((err) => {  //eslint-disable-line
+
   });

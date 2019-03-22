@@ -7,7 +7,7 @@ import CandidateDetail from './CandidateDetail.js'
 const CandidateRouter = (props) => (
   <>
     <Router primary={false}>
-      <CandidateCards path="/" />
+      <CandidateCards path="/*" />
       <CandidateDetail path="candidatedetails/:candId" />
     </Router>
   </>

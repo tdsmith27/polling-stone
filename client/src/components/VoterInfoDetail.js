@@ -42,7 +42,7 @@ let VoterInfoDetail = () => {
 let NavRoutes = () => {
   return (
     <Router primary={false}>
-      <VoterInfo path="/" />
+      <VoterInfo path="/*" />
       <WhatToBring path="what-to-bring" />
       <HowAndWhere path="how-and-where" />
       <Register path="am-i-registered" />

@@ -11,7 +11,7 @@ const { Header } = Layout;
 const MainRoutes = (props) => (
   <>
     <Router primary={false}>
-      <LandingPage path="/" />
+      <LandingPage path="/*" />
       <CandidateRouter path="candidates/*" />
       <VoterInfoDetail path="voterInfo/*" />
     </Router>
