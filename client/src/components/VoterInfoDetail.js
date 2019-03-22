@@ -70,6 +70,7 @@ const WhatToBringCard = () => {
               <img
                 style={imageStyle}
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1F0y8WGcS29t6PQVfkmLwmLgsPEV75XYYoHEurNNQawnKIUas"
+                alt="Vote"
               />
             }>
             <Meta description="What to bring on Voting Day" />

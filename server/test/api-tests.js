@@ -1,22 +1,12 @@
-const assert = require("assert");
-const chai = require("chai");
-const expect = chai.expect;
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+
+const expect = chai.expect; //eslint-disable-line
 const should = chai.should();
-const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
 
-// A test to test the tests
-// describe("Array", () => {
-//   describe("#indexOf()", () => {
-//     it("should return -1 when the value is not present", () => {
-//       assert.equal([1, 2, 3].indexOf(4), -1);
-//     });
-//   });
-// });
-
-// Tests for API calls start below
-describe('/GET VoterId', () => {
-  it('it should GET VoterId requirements by state', () => {
+describe('/GET VoterId', () => { //eslint-disable-line
+  it('it should GET VoterId requirements by state', () => { //eslint-disable-line
     chai
       .request('http://localhost:8000')
       .get('/api/voterId/:state')
@@ -24,87 +14,90 @@ describe('/GET VoterId', () => {
         should.not.exist(err);
         should.exist(res);
         res.should.have.status(200);
-        res.body.should.be.a("array");
-        done();
+        res.body.should.be.a('array');
+        done(); //eslint-disable-line
       })
       .catch(err => err);
   });
 });
 
-describe("GET candidates", () => {
-  it("should get all candidate data", () => {
+
+describe('GET candidates', () => { //eslint-disable-line
+  it('should get all candidate data', () => { //eslint-disable-line
+
     chai
-      .request("http://localhost:8000")
-      .get("/api/candidates")
+      .request('http://localhost:8000')
+      .get('/api/candidates')
       .then((err, res) => {
         should.not.exist(err);
         should.exist(res);
-        res.should.have.status(200);
-        expect(res).to.be.json;
-        done();
+        res.should.have.status(200); //eslint-disable-line
+        expect(res).to.be.json; //eslint-disable-line
+        done(); //eslint-disable-line
       })
       .catch(err => err);
   });
 });
 
-describe("GET policies", () => {
-  it("should get all policy data", () => {
+describe('GET policies', () => { //eslint-disable-line
+  it('should get all policy data', () => { //eslint-disable-line
     chai
-      .request("http://localhost:8000")
-      .get("/api/policies")
+      .request('http://localhost:8000')
+      .get('/api/policies')
       .then((err, res) => {
         should.not.exist(err);
         should.exist(res);
-        res.should.have.status(200);
-        expect(res).to.be.json;
-        done();
+        res.should.have.status(200); //eslint-disable-line
+        expect(res).to.be.json; //eslint-disable-line
+        done(); //eslint-disable-line
       })
       .catch(err => err);
   });
 });
 
-describe("GET voter", () => {
-  it("should get all voter data", () => {
+describe('GET voter', () => { //eslint-disable-line
+  it('should get all voter data', () => { //eslint-disable-line
     chai
-      .request("http://localhost:8000")
-      .get("/api/voter")
+      .request('http://localhost:8000')
+      .get('/api/voter')
       .then((err, res) => {
         should.not.exist(err);
         should.exist(res);
-        res.should.have.status(200);
-        expect(res).to.be.json;
-        done();
+        res.should.have.status(200);//eslint-disable-line
+        expect(res).to.be.json;//eslint-disable-line
+        done();//eslint-disable-line
       })
       .catch(err => err);
   });
 });
 
-describe("GET candidateInfoPage", () => {
-  it("should get name, photo, and party for all candidates", () => {
+describe('GET candidateInfoPage', () => { //eslint-disable-line
+  it('should get name, photo, and party for all candidates', () => { //eslint-disable-line
     chai
-      .request("http://localhost:8000")
-      .get("/api/candidateInfoPage")
+      .request('http://localhost:8000')
+      .get('/api/candidateInfoPage')
       .then((err, res) => {
         should.not.exist(err);
         should.exist(res);
-        res.should.have.status(200);
-        expect(res).to.be.json;
-        done();
-      }).catch(err => err)
+        res.should.have.status(200); //eslint-disable-line
+        expect(res).to.be.json; //eslint-disable-line
+        done(); //eslint-disable-line
+      }).catch(err => err);
   });
 });
 
-describe("GET bios", () => {
-  it("should get bios for all candidates", () => {
+describe('GET bios', () => { //eslint-disable-line
+  it('should get bios for all candidates', () => { //eslint-disable-line
+
     chai
-      .request("http://localhost:8000")
-      .get("/api/bios")
+      .request('http://localhost:8000')
+      .get('/api/bios')
       .then((err, res) => {
         should.not.exist(err);
         should.exist(res);
-        res.should.have.status(200);
-        expect(res).to.be.json;
-        done();
-      }).catch(err => err)
+        res.should.have.status(200); //eslint-disable-line
+        expect(res).to.be.json; //eslint-disable-line
+        done(); //eslint-disable-line
+      }).catch(err => err);
   });
 });
