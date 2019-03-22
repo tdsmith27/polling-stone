@@ -28,9 +28,6 @@ const {
   voterId,
 } = require('./routes');
 
-//don't change app.use to app.use('/*', ....)
-
-
 app.use(express.static(join(__dirname, '../client/build')));
 
 app.use('/api/candidates', candidates);
@@ -45,14 +42,10 @@ app.use('/voterinfo/*', express.static(join(__dirname, '../client/build')));
 app.use('/candidates', express.static(join(__dirname, '../client/build')));
 app.use('/voterinfo', express.static(join(__dirname, '../client/build')));
 
-
-
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));
 });
-
-
 
 // error handler
 app.use((err, req, res) => {
