@@ -1,83 +1,78 @@
 const path = require('path');
-require('dotenv').config(path.join(__dirname, "./.env"));
-let env = process.env.NODE_ENV
-const config = require("../knexfile")[env || 'development'];
-const knex = require("knex")(config);
 
-const initialConnection = knex("test table")
-  .then(result => {
+require('dotenv').config(path.join(__dirname, './.env'));
+
+const env = process.env.NODE_ENV;
+const config = require('../knexfile')[env || 'development']; //eslint-disable-line
+const knex = require('knex')(config); //eslint-disable-line
+
+const initialConnection = knex('test table')
+  .then(() => {
   })
-  .catch(err => {
-    console.log("err:", err);
+  .catch(() => {
   });
 
 const getStateIdLaws = (state, cb) => {
   knex.select()
     .table('voter-id')
     .where('state', `${state}`)
-    .then((data) => cb(null, data))
+    .then(data => cb(null, data))
     .catch((err) => {
-      cb(err)
-      console.log('err:', err)
-    })
-}
+      cb(err);
+    });
+};
 
 const findAllCandidates = (id, cb) => {
-  knex("candidates")
+  knex('candidates')
     .where('id', id)
-    .then(results => {
+    .then((results) => {
       cb(null, results);
     })
-    .catch(err => {
+    .catch((err) => {
       cb(err);
-      console.log("err:", err);
     });
 };
 
 const findAllPolicies = (id, cb) => {
-  knex("policies")
+  knex('policies')
     .where('id', id)
-    .then(results => {
+    .then((results) => {
       cb(null, results);
     })
-    .catch(err => {
+    .catch((err) => {
       cb(err);
-      console.log("err:", err);
     });
 };
 
 const findAllStates = (err, cb) => {
   knex.select('state')
     .table('voter-id')
-    .then((data) => cb(null, data))
-    .catch((err) => {
-      cb(err)
-      console.log('err:', err)
-    })
+    .then(data => cb(null, data))
+    .catch(() => {
+      cb(err);
+    });
 };
 
 const findCandidatePage = (err, cb) => {
   knex.column('firstName', 'lastName', 'photoUrl', 'party').select().from('candidates')
     .then((results) => {
-      cb(null, results)
+      cb(null, results);
     })
-    .catch((err) => {
-      cb(err)
-      console.log('err:', err)
-    })
-}
+    .catch(() => {
+      cb(err);
+    });
+};
 
 const findAllBios = (id, cb) => {
   knex('bios')
     .where('id', id)
     .then((results) => {
-      cb(null, results)
+      cb(null, results);
     })
     .catch((err) => {
-      cb(err)
-      console.log('err:', err)
-    })
-}
+      cb(err);
+    });
+};
 
 module.exports = {
   initialConnection,
@@ -86,6 +81,5 @@ module.exports = {
   findAllStates,
   getStateIdLaws,
   findCandidatePage,
-  findAllBios
+  findAllBios,
 };
-

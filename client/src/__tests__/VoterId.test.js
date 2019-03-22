@@ -3,7 +3,7 @@ import { render, cleanup, waitForElement } from 'react-testing-library'
 
 // this adds custom jest matchers from jest-dom
 import 'jest-dom/extend-expect'
-import VoterId from '../components/VoterID.js';
+import VoterId from '../components/voterId.js';
 
 afterEach(cleanup);
 
