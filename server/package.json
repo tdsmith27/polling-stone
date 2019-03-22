@@ -39,7 +39,7 @@
     "request-promise": "^4.2.4"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^9.0.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "eslint": "^5.12.0",
