@@ -12,7 +12,7 @@ const PolicyBlock = (props) => {
   }
   return (
     <div style={divStyle}>
-      {policies.map((el, ind) => <PolicyCard title={policyNames[ind]} policy={el} />)}
+      {policies.map((el, ind) => <PolicyCard key={ind} title={policyNames[ind]} policy={el} />)}
     </div>
   )
 };

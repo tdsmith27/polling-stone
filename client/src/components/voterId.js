@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios'
 import { Select } from 'antd';
-import StateId from './StateID'
+import StateId from './stateId'
 
 import 'antd/dist/antd.css';
 
@@ -12,6 +12,7 @@ const VoterId = () => {
   let [choice, setChoice] = useState("Alabama");
 
   useEffect(() => {
+    const server = process.env.SERVER || 'http://localhost:8000';
     const api = 'http://localhost:8000/api/voter';
     Axios
       .get(api)

@@ -14,9 +14,10 @@ const StateId = props => {
   let [absentee, setAbsentee] = useState("Absentee details here");
 
   useEffect(() => {
+    const server = process.env.SERVER || 'http://localhost:8000';
     setUsaState(props.usaState)
     Axios
-      .get(`http://localhost:8000/api/voterId/${usaState}`)
+      .get(`${server}/api/voterId/${usaState}`)
       .then(response => {
         setInPerson(response.data[0].in_person);
         setAbsentee(response.data[0].absentee);
