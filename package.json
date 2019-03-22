@@ -9,7 +9,7 @@
     "launch": "cd ./server && node bin/www & cd ./client && npm run-script start &",
     "commit": "git-cz",
     "pm2-start": "npm run setup && cd ./client && npm run build && cd ../server && npm run start",
-    "lint": "cd server && npm run lint; cd ../client && npm run lint"
+    "lint": "cd server && npm run lint && cd ../client && npm run lint"
   },
   "repository": {
     "type": "git",
