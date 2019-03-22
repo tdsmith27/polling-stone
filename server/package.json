@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon bin/www",
-    "test": "nyc mocha"
+    "test": "nyc mocha",
+    "lint": "npx eslint '**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -37,8 +38,15 @@
     "request-promise": "^4.2.4"
   },
   "devDependencies": {
+    "babel-eslint": "^9.0.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
     "http-errors": "^1.7.2",
     "install": "^0.12.2",
     "mocha": "^6.0.2",

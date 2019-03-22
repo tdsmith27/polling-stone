@@ -20,7 +20,7 @@ const MainRoutes = (props) => (
 
 const Head = (props) => (
   <>
-    <Header test-id='header' className="header">
+    <Header test-id='header' className="header" >
       <Menu
         theme="dark"
         mode="horizontal"
