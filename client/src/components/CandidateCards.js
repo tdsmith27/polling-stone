@@ -36,7 +36,7 @@ class CandidateCards extends React.Component {
       <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%', 'backgroundColor': 'black' }}>
         {this.state.candidates.map((candidate, i) => {
           return (
-            <Link to={`candidatedetails/${candidate.lastName}`} style={{width:'23%',margin: '10px auto 10px'}}>
+            <Link to={`candidatedetails/${candidate.lastName.toLowerCase()}`} style={{width:'23%',margin: '10px auto 10px'}} key={i}>
             <Card
               hoverable
               style={{ width: '100%', height: '370px', margin: '10px auto 15px', textAlign: 'center', borderRadius: '3px' }}
