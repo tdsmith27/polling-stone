@@ -25,7 +25,7 @@ const Head = (props) => (
         theme="dark"
         mode="horizontal"
         selectable={false}
-        style={{ lineHeight: '64px' }}
+        style={menuStyle}
       >
         <Menu.Item key="1">
           <Link to="/">
@@ -46,5 +46,9 @@ const Head = (props) => (
     </Header>
   </>
 )
+
+const menuStyle = {
+  lineHeight: '64px'
+};
 
 export { Head, MainRoutes };

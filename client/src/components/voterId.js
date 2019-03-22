@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios'
 import { Select } from 'antd';
-import StateId from './StateID'
+import StateId from './stateId'
 
 import 'antd/dist/antd.css';
-
+ 
 const VoterId = () => {
   const Option = Select.Option;
 
@@ -32,7 +32,7 @@ const VoterId = () => {
         size={'large'}
         defaultValue={choice}
         onChange={handleChange}
-        style={{ width: 200 }}
+        style={selectStyle}
       >
         {states.map((ele, i) => {
           return <Option key={ele}>{ele}</Option>
@@ -42,5 +42,9 @@ const VoterId = () => {
     </>
   )
 }
+
+const selectStyle = {
+  width: 200
+};
 
 export default VoterId;

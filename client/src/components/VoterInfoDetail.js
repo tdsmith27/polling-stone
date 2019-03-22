@@ -3,34 +3,20 @@ import { Row, Col, Card, Layout } from "antd";
 import "antd/dist/antd.css";
 import { Router, Link } from "@reach/router";
 import SideBar from "./SideBar";
-import RegCheckForm from './RegCheckForm'
-import VoterId from './VoterID'
+import RegCheckForm from './regCheckForm'
+import VoterId from './voterId'
 import PollMap from './PollMap'
 
 
 const { Meta } = Card;
 const { Content } = Layout;
 
-const cardStyle = {
-  width: "100%",
-  height: "100%",
-  margin: "auto"
-};
-
-const imageStyle = {
-  objectFit: "scale-down",
-  height: "100px",
-  borderBottom: "solid 1px lightgray",
-  paddingBottom: "8px",
-  paddingTop: "8px"
-};
-
 let VoterInfoDetail = () => {
   return (
     <Layout>
       <Layout>
         < SideBar />
-        <Content style={{ height: "99vh" }}>
+        <Content style={voterInfoContentStyle}>
           <NavRoutes />
         </Content>
       </Layout>
@@ -56,7 +42,7 @@ let VoterInfo = () => {
     <>
       <Row
         gutter={32}
-        style={{ height: "1fr", marginBottom: "10%", marginTop: "10%" }}>
+        style={voterInfoRowStyle}>
         <Col span={8}>
           <WhatToBringCard bordered={false} />
         </Col>
@@ -75,7 +61,7 @@ let VoterInfo = () => {
 const WhatToBringCard = () => {
   return (
     <>
-      <div style={{ marginLeft: "22%", marginRight: "22%" }}>
+      <div style={whatToBringDivStyle}>
         <Link to={"what-to-bring"}>
           <Card
             hoverable
@@ -98,7 +84,7 @@ const WhatToBringCard = () => {
 const HowAndWhereCard = () => {
   return (
     <>
-      <div style={{ marginLeft: "22%", marginRight: "22%" }}>
+      <div style={howAndWhereDivStyle}>
         <Link to="how-and-where">
           <Card
             hoverable
@@ -124,7 +110,7 @@ const HowAndWhereCard = () => {
 const RegisterCard = () => {
   return (
     <>
-      <div style={{ marginLeft: "22%", marginRight: "22%" }}>
+      <div style={registerCardDivStyle}>
         <Link to="am-i-registered">
           <Card
             hoverable
@@ -160,7 +146,7 @@ const WhatToBring = () => {
 const HowAndWhere = () => {
   return (
     <Content>
-      <div id="how-and-where-placeholder" style={{ width: "80vw", height: '80vh' }}>
+      <div id="how-and-where-placeholder" style={howAndWhereContentStyle}>
         <PollMap />
       </div>
     </Content>
@@ -175,6 +161,50 @@ const Register = () => {
       </div>
     </Content>
   );
+};
+
+const howAndWhereContentStyle = {
+  width: "80vw", 
+  height: '80vh'
+};
+
+const registerCardDivStyle = {
+  marginLeft: "22%", 
+  marginRight: "22%"
+};
+
+const howAndWhereDivStyle = {
+  marginLeft: "22%", 
+  marginRight: "22%"
+};
+
+const whatToBringDivStyle = {
+  marginLeft: "22%", 
+  marginRight: "22%"
+};
+
+const voterInfoContentStyle = {
+  height: "99vh"
+};
+
+const voterInfoRowStyle = {
+  height: "1fr", 
+  marginBottom: "10%", 
+  marginTop: "10%"
+}
+
+const cardStyle = {
+  width: "100%",
+  height: "100%",
+  margin: "auto"
+};
+
+const imageStyle = {
+  objectFit: "scale-down",
+  height: "100px",
+  borderBottom: "solid 1px lightgray",
+  paddingBottom: "8px",
+  paddingTop: "8px"
 };
 
 export default VoterInfoDetail;
