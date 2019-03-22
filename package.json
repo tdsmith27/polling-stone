@@ -8,7 +8,8 @@
     "test": "echo pwd && cd ./client && npm test ; cd ../server && npm test",
     "launch": "cd ./server && node bin/www & cd ./client && npm run-script start &",
     "commit": "git-cz",
-    "pm2-start": "npm run setup && cd ./client && npm run build && cd ../server && npm run start"
+    "pm2-start": "npm run setup && cd ./client && npm run build && cd ../server && npm run start",
+    "lint": "cd server && npm run lint; cd ../client && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,8 @@
   "homepage": "https://github.com/gSchool/blue-ocean-starter#readme",
   "devDependencies": {
     "commitizen": "^3.0.7",
-    "cz-conventional-changelog": "^2.1.0"
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.12.0"
   },
   "config": {
     "commitizen": {
