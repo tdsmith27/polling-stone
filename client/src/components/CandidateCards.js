@@ -4,11 +4,14 @@ import { Card } from 'antd';
 import axios from 'axios';
 import CandidateDetail from './CandidateDetail.js'
 
+const NotFound = () => <div>404 -- Oh no, something broke!<img src='http://66.media.tumblr.com/f4f3553d1bbef33713b3af38d3598436/tumblr_mnu1bxAXC11rf5vsao1_500.gif' alt="penguin-falling" /></div>
+
 const CandidateRouter = (props) => (
   <>
     <Router primary={false}>
       <CandidateCards path="/" />
       <CandidateDetail path="candidatedetails/:candId" />
+      <NotFound default={true} />
     </Router>
   </>
 )
@@ -19,9 +22,10 @@ class CandidateCards extends React.Component {
     this.state = {
       candidates: []
     }
+    this.server = process.env.SERVER || 'http://localhost:8000'
   }
   componentWillMount() {
-    axios.get('http://localhost:8000/api/candidateInfoPage')
+    axios.get(`${this.server}/api/candidateInfoPage`)
       .then((info) => {
         this.setState({
           candidates: info.data,
@@ -33,20 +37,20 @@ class CandidateCards extends React.Component {
   }
   render() {
     return (
-      <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%', 'backgroundColor': 'black' }}>
+      <div style={candidateCardDivStyle}>
         {this.state.candidates.map((candidate, i) => {
           return (
-            <Link to={`candidatedetails/${candidate.lastName.toLowerCase()}`} style={{width:'23%',margin: '10px auto 10px'}} key={i}>
-            <Card
-              hoverable
-              style={{ width: '100%', height: '370px', margin: '10px auto 15px', textAlign: 'center', borderRadius: '3px' }}
-            >
-              <div style={{ height: '200px' }}>
-                <img alt={'test'} style={{ maxHeight: '200px', maxWidth: '100%' }} src={candidate.photoUrl} />
-              </div>
-              <div className="candidate-card-name" style={{ color: 'black', fontSize: '22px', marginBottom: '10px', marginTop: '20px' }}>{candidate.firstName}<br />{candidate.lastName} </div>
-              <div className="candidate-card-party" style={{ fontSize: '18px' }}>{candidate.party}</div>
-            </Card>
+            <Link to={`candidatedetails/${candidate.lastName.toLowerCase()}`} style={linkStyle} key={i}>
+              <Card
+                hoverable
+                style={cardStyle}
+              >
+                <div style={imageDivStyle}>
+                  <img alt={'test'} style={imageStyle} src={candidate.photoUrl} />
+                </div>
+                <div className="candidate-card-name" style={candidateCardNameStyle}>{candidate.firstName}<br />{candidate.lastName} </div>
+                <div className="candidate-card-party" style={candidateCardPartyStyle}>{candidate.party}</div>
+              </Card>
             </Link>
           )
         })}
@@ -54,4 +58,45 @@ class CandidateCards extends React.Component {
     )
   }
 }
+
+const candidateCardDivStyle = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  width: '100%',
+  backgroundColor: 'black'
+};
+
+const linkStyle = {
+  width: '23%',
+  margin: '10px auto 10px'
+};
+
+const cardStyle = {
+  width: '100%',
+  height: '370px',
+  margin: '10px auto 15px',
+  textAlign: 'center',
+  borderRadius: '3px'
+};
+
+const imageDivStyle = {
+  height: '200px'
+};
+
+const imageStyle = {
+  maxHeight: '200px',
+  maxWidth: '100%'
+};
+
+const candidateCardNameStyle = {
+  color: 'black',
+  fontSize: '22px',
+  marginBottom: '10px',
+  marginTop: '20px'
+};
+
+const candidateCardPartyStyle = {
+  fontSize: '18px'
+};
+
 export default CandidateRouter;

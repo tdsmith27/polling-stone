@@ -244,4 +244,4 @@ class PollMap extends React.Component {
     }
 }
 
-export default PollMap
+export default PollMap;

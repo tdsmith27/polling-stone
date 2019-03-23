@@ -6,6 +6,7 @@
     "@reach/router": "^1.2.1",
     "antd": "^3.15.1",
     "axios": "^0.18.0",
+    "dotenv": "^7.0.0",
     "jquery": "^3.3.1",
     "mapbox-gl": "^0.53.1",
     "react": "^16.8.4",
@@ -21,7 +22,8 @@
     "build": "react-scripts build",
     "test": "CI=true react-scripts test --color --verbose --coverage",
     "eject": "react-scripts eject",
-    "commit": "cd .. && npm run commit"
+    "commit": "cd .. && npm run commit",
+    "lint": "npx eslint src/**/*.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,6 +35,15 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-react-app": "^3.0.8",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "jest-dom": "^3.1.2",
     "postcss-loader": "^3.0.0",
     "react-testing-library": "^6.0.0"

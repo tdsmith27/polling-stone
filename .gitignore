@@ -46,4 +46,4 @@ bower_components/
 .DS_Store
 
 #Environmental
-/server/.env
+.env
