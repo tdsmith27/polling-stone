@@ -13,6 +13,12 @@ const polls = require("../lib/polls.jpg");
 const voting = require("../lib/voting.jpg");
 const registration = require("../lib/registration.jpeg");
 
+const voterInfoItems = [
+  ["what-to-bring", "voting-requirements", voting, "Voting Requirements", "Find out what you need to bring with you on voting day"],
+  ["how-and-where", "polling-locations", polls, "Polling Locations", "Find your nearest polling locations"],
+  ["am-i-registered", "register-to-vote", registration, "Register to Vote", "Find out if you are registered to vote in 30 seconds"]
+];
+
 let VoterInfoDetail = () => {
   return (
     <Layout>
@@ -32,42 +38,20 @@ let VoterInfoDetail = () => {
 let VoterInfo = () => {
   return (
     <>
-      <div className="card-container">
-        <Link to={"what-to-bring"}>
+      <div style={cardContainer}>
+      {voterInfoItems.map((item, key) => (
+        <Link to={item[0]} key={`voterInfoCard-${key}`}>
           <Card
             hoverable
             style={infoCardStyle}
-            cover={<img alt="voting-requirements" src={voting} />}>
+            cover={<img alt={item[1]} src={item[2]} />}>
             <Meta
-              title="Voting Requirements"
-              description="Find out what you need to bring with you on voting day"
+              title={item[3]}
+              description={item[4]}
             />
           </Card>
         </Link>
-
-        <Link to="how-and-where">
-          <Card
-            hoverable
-            style={infoCardStyle}
-            cover={<img alt="polling-locations" src={polls} />}>
-            <Meta
-              title="Polling Locations"
-              description="Find your nearest polling locations"
-            />
-          </Card>
-        </Link>
-
-        <Link to="am-i-registered">
-          <Card
-            hoverable
-            style={infoCardStyle}
-            cover={<img alt="register-to-vote" src={registration} />}>
-            <Meta
-              title="Register to Vote"
-              description="Find out if you are registered to vote in 30 seconds."
-            />
-          </Card>
-        </Link>
+      ))}
       </div>
     </>
   );
@@ -95,6 +79,13 @@ const infoCardStyle = {
   width: "350px",
   height: "500px",
   borderRadius: "7px"
+};
+
+const cardContainer = {
+  display: "flex",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  height: "700px"
 };
 
 export default VoterInfoDetail;
