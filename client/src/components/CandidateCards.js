@@ -19,9 +19,10 @@ class CandidateCards extends React.Component {
     this.state = {
       candidates: []
     }
+    this.server = process.env.SERVER || 'http://localhost:8000'
   }
   componentWillMount() {
-    axios.get('http://localhost:8000/api/candidateInfoPage')
+    axios.get(`${this.server}/api/candidateInfoPage`)
       .then((info) => {
         this.setState({
           candidates: info.data,

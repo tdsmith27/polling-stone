@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import BiographicCard from './CandidateDetailComponents/BiographicCard.js'
 import PolicyBlock from './CandidateDetailComponents/PolicyBlock.js';
 import Axios from 'axios';
+require('dotenv').config();
 
 export default class App extends Component {
   constructor(props) {

@@ -27,6 +27,12 @@ const mapFormStyle = {
     right: 5
 };
 
+const imageStyle = {
+    gridColumn: 1, 
+    gridRow: 1, 
+    margin: 'auto'
+}
+
 const Map = ReactMapBoxGl({
     accessToken: 'pk.eyJ1IjoiZGV2bm9haCIsImEiOiJjanRieGNpZzAwcW5tNDRyeXhvbG5tZjZjIn0.tB7Rsz3NKcNnpwfWWMltVg'
 })
@@ -96,7 +102,7 @@ class PollMap extends React.Component {
                                         alt=""
                                         height="15"
                                         width="15"
-                                        style={{ 'gridColumn': 1, 'gridRow': 1, margin: 'auto' }} />
+                                        style={imageStyle} />
                                 </div>
                             </Marker>
                         )
