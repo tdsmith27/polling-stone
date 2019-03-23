@@ -2,20 +2,24 @@ import React from "react";
 import { Link } from "@reach/router";
 import { Card } from "antd";
 import "antd/dist/antd.css";
-const polls = require("../lib/polls.jpg");
-const voting = require("../lib/voting.jpg");
-const { Meta } = Card; 
+const iVoted = require("../lib/iVoted.png");
+const candidates = require("../lib/candidates.jpg");
+const { Meta } = Card;
 
 const LandingPage = props => (
   <div style={cardContainerStyle}>
     <Link to="candidates">
       <Card
         hoverable
-        style={cardStyle} 
-        cover={<img alt="example" src={voting} />}>
+        style={cardStyle}
+        cover={<img alt="example" src={candidates} />}>
         <Meta
           title={<span style={cardTitleStyle}>Candidates</span>}
-          description={<span style={cardDescriptionStyle}>Click here to get info on your 2020 presidential candidates</span>}
+          description={
+            <span style={cardDescriptionStyle}>
+              Click here to get info on your 2020 presidential candidates
+            </span>
+          }
         />
       </Card>
     </Link>
@@ -23,10 +27,15 @@ const LandingPage = props => (
       <Card
         hoverable
         style={cardStyle}
-        cover={<img alt="example" src={polls} />}>
+        cover={<img alt="example" src={iVoted} />}>
         <Meta
           title={<span style={cardTitleStyle}>Voter Info</span>}
-          description={<span style={cardDescriptionStyle}>Click here to get info on where to vote, what to bring, and if you are registered</span>}
+          description={
+            <span style={cardDescriptionStyle}>
+              Click here to get info on where to vote, what to bring, and if you
+              are registered
+            </span>
+          }
         />
       </Card>
     </Link>
@@ -52,7 +61,7 @@ const cardTitleStyle = {
 };
 
 const cardStyle = {
-  width: 400, 
+  width: 400,
   height: 500
 };
 
