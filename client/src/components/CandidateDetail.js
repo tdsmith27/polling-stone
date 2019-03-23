@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import BiographicCard from './CandidateDetailComponents/BiographicCard.js'
 import PolicyBlock from './CandidateDetailComponents/PolicyBlock.js';
 import Axios from 'axios';
+require('dotenv').config();
 
 export default class App extends Component {
   constructor(props) {
@@ -62,7 +63,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div test-id='ancestor' style={{backgroundColor: '#C0C0C0', padding: '20px', width: '100%' }}>
+      <div test-id='ancestor' style={candidateDetailStyle}>
         <BiographicCard 
           bio={this.state.bio} 
           details={this.state.details}
@@ -72,4 +73,10 @@ export default class App extends Component {
       </div>
     )
   };
+};
+
+const candidateDetailStyle = {
+  backgroundColor: '#C0C0C0', 
+  padding: '20px', 
+  width: '100%'
 };

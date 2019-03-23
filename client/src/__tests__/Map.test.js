@@ -1,13 +1,11 @@
 import React from "react";
 import {
   render,
-  fireEvent,
   cleanup,
-  waitForElement
 } from "react-testing-library";
 
 import "jest-dom/extend-expect";
-import PollMa from "../components/PollMap.js";
+import PollMap from "../components/PollMap.js";
 
 afterEach(cleanup);
 
