@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 import { Card, Col, Row } from "antd";
 import Axios from "axios";
+require('dotenv').config()
 
 const myStyles = {
   height: "50vh",
@@ -14,10 +15,10 @@ const StateId = props => {
   let [absentee, setAbsentee] = useState("Absentee details here");
 
   useEffect(() => {
-    const server = process.env.SERVER || 'http://localhost:8000';
+    const server = process.env.SERVER || 'localhost:8000';
     setUsaState(props.usaState)
     Axios
-      .get(`${server}/api/voterId/${usaState}`)
+      .get(`http://${server}/api/voterId/${usaState}`)
       .then(response => {
         setInPerson(response.data[0].in_person);
         setAbsentee(response.data[0].absentee);

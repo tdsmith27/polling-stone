@@ -40,10 +40,10 @@ export default class App extends Component {
       'schriner': 26
     };
     this.vote = this.candidateDictionary[this.props.candId.toLowerCase()] || Math.floor(Math.random()*25);
-    this.server = process.env.SERVER || 'http://localhost:8000';
+    this.server = process.env.SERVER || 'localhost:8000';
   };
   betterThanDemocracy() {
-    Axios.get(`${this.server}/api/candidates/${this.vote}`)
+    Axios.get(`http://${this.server}/api/candidates/${this.vote}`)
       .then(data => this.setState({details: data.data[0]}) )
       .catch(err => console.log(err));
 

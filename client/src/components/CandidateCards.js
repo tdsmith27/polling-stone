@@ -3,6 +3,8 @@ import { Router, Link } from "@reach/router";
 import { Card } from 'antd';
 import axios from 'axios';
 import CandidateDetail from './CandidateDetail.js'
+require('dotenv').config();
+
 
 const CandidateRouter = (props) => (
   <>
@@ -19,10 +21,10 @@ class CandidateCards extends React.Component {
     this.state = {
       candidates: []
     }
-    this.server = process.env.SERVER || 'http://localhost:8000'
+    this.server = process.env.SERVER || 'localhost:8000'
   }
   componentWillMount() {
-    axios.get(`${this.server}/api/candidateInfoPage`)
+    axios.get(`http://${this.server}/api/candidateInfoPage`)
       .then((info) => {
         this.setState({
           candidates: info.data,
