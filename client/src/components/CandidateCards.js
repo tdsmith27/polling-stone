@@ -24,7 +24,6 @@ class CandidateCards extends React.Component {
     this.server = 'ec2-3-16-229-206.us-east-2.compute.amazonaws.com'
   }
   componentDidMount() {
-    console.log(this.server);
     axios.get(`http://${this.server}/api/candidateInfoPage`)
       .then((info) => {
         this.setState({

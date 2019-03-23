@@ -1,4 +1,3 @@
-const path = require('path');
 require('dotenv').config();
 const knex = require('knex'); //eslint-disable-line
 

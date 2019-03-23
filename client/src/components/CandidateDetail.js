@@ -47,11 +47,11 @@ export default class App extends Component {
       .then(data => this.setState({details: data.data[0]}) )
       .catch(err => console.log(err));
 
-      Axios.get(`${this.server}/api/bios/${this.vote}`)
+      Axios.get(`http://${this.server}/api/bios/${this.vote}`)
       .then(data => this.setState({bio: data.data[0]}))
       .catch(err => console.log(err));
 
-      Axios.get(`${this.server}/api/policies/${this.vote}`)
+      Axios.get(`http://${this.server}/api/policies/${this.vote}`)
         .then(data => this.setState({policies: data.data[0]}))
         .catch(err => console.log(err));
   }
