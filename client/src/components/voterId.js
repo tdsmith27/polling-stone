@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from 'react';
-import Axios from 'axios'
-import { Select } from 'antd';
-import StateId from './stateId'
-=======
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { Select } from "antd";
 import StateId from "./stateId";
->>>>>>> d911d2c849d66064e9709758508f3bf95198ef81
 
 import "antd/dist/antd.css";
 

@@ -2,17 +2,10 @@ import React from "react";
 import { Card, Layout } from "antd";
 import { Router, Link } from "@reach/router";
 import SideBar from "./SideBar";
-<<<<<<< HEAD
-import RegCheckForm from './regCheckForm'
-import VoterId from './voterId'
-import PollMap from './PollMap'
-
-=======
 import RegCheckForm from "./regCheckForm";
 import VoterId from "./voterId";
 import PollMap from "./PollMap";
 import "antd/dist/antd.css";
->>>>>>> d911d2c849d66064e9709758508f3bf95198ef81
 
 const { Meta } = Card;
 const { Content } = Layout;
