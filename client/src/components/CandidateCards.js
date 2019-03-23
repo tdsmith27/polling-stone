@@ -23,7 +23,8 @@ class CandidateCards extends React.Component {
     }
     this.server = process.env.SERVER || 'localhost:8000'
   }
-  componentWillMount() {
+  componentDidMount() {
+    console.log(this.server);
     axios.get(`http://${this.server}/api/candidateInfoPage`)
       .then((info) => {
         this.setState({
