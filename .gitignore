@@ -44,3 +44,6 @@ bower_components/
 .nyc_output
 
 .DS_Store
+
+#Environmental
+.env

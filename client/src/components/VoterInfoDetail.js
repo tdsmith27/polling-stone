@@ -1,179 +1,68 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col, Card, Layout, Menu, Anchor } from "antd";
-import "antd/dist/antd.css";
+import React from "react";
+import { Card, Layout } from "antd";
 import { Router, Link } from "@reach/router";
 import SideBar from "./SideBar";
-import RegCheckForm from './regCheckForm'
-import VoterId from './voterId'
-import PollMap from './PollMap'
-
+import RegCheckForm from "./regCheckForm";
+import VoterId from "./voterId";
+import PollMap from "./PollMap";
+import "antd/dist/antd.css";
+import "./LandingPage.css";
 
 const { Meta } = Card;
-const { Header, Footer, Sider, Content } = Layout;
+const { Content } = Layout;
+const polls = require("../lib/polls.jpg");
+const voting = require("../lib/voting.jpg");
+const registration = require("../lib/registration.jpeg");
 
-const cardStyle = {
-  width: "100%",
-  height: "100%",
-  margin: "auto"
-};
-
-const imageStyle = {
-  objectFit: "scale-down",
-  height: "100px",
-  borderBottom: "solid 1px lightgray",
-  paddingBottom: "8px",
-  paddingTop: "8px"
-};
+const voterInfoItems = [
+  ["what-to-bring", "voting-requirements", voting, "Voting Requirements", "Find out what you need to bring with you on voting day"],
+  ["how-and-where", "polling-locations", polls, "Polling Locations", "Find your nearest polling locations"],
+  ["am-i-registered", "register-to-vote", registration, "Register to Vote", "Find out if you are registered to vote in 30 seconds"]
+];
 
 let VoterInfoDetail = () => {
   return (
     <Layout>
-      <Layout>
-        < SideBar />
-        <Content style={{ height: "99vh" }}>
-          <NavRoutes />
-        </Content>
-      </Layout>
+      <SideBar />
+      <Content style={{ height: "100vh", backgroundColor: "#ededed" }}>
+        <Router primary={false}>
+          <VoterInfo path="/" />
+          <VoterId path="what-to-bring" />
+          <PollLocations path="how-and-where" />
+          <RegCheckForm path="am-i-registered" />
+        </Router>
+      </Content>
     </Layout>
   );
 };
 
-//side bar implementation
-let NavRoutes = () => {
-  return (
-    <Router>
-      <VoterInfo path="/" />
-      <WhatToBring path="what-to-bring" />
-      <HowAndWhere path="how-and-where" />
-      <Register path="am-i-registered" />
-    </Router>
-  );
-};
-
-// /home render path
 let VoterInfo = () => {
   return (
     <>
-      <Row
-        gutter={32}
-        style={{ height: "1fr", marginBottom: "10%", marginTop: "10%" }}>
-        <Col span={8}>
-          <WhatToBringCard bordered={false} />
-        </Col>
-        <Col span={8}>
-          <HowAndWhereCard bordered={false} />
-        </Col>
-        <Col span={8}>
-          <RegisterCard bordered={false} />
-        </Col>
-      </Row>
-    </>
-  );
-};
-
-//what to bring card
-const WhatToBringCard = () => {
-  return (
-    <>
-      <div style={{ marginLeft: "22%", marginRight: "22%" }}>
-        <Link to={"what-to-bring"}>
+      <div className="card-container">
+      {voterInfoItems.map((item, key) => (
+        <Link to={item[0]} key={`voterInfoCard-${key}`}>
           <Card
             hoverable
-            style={cardStyle}
-            cover={
-              <img
-                style={imageStyle}
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1F0y8WGcS29t6PQVfkmLwmLgsPEV75XYYoHEurNNQawnKIUas"
-              />
-            }>
-            <Meta description="What to bring on Voting Day" />
+            className="info-card"
+            cover={<img alt={item[1]} src={item[2]} />}>
+            <Meta
+              title={item[3]}
+              description={item[4]}
+            />
           </Card>
         </Link>
+      ))}
       </div>
     </>
   );
 };
 
-//how and where card
-const HowAndWhereCard = () => {
+const PollLocations = () => {
   return (
-    <>
-      <div style={{ marginLeft: "22%", marginRight: "22%" }}>
-        <Link to="how-and-where">
-          <Card
-            hoverable
-            style={cardStyle}
-            cover={
-              <img
-                style={imageStyle}
-                width="100%"
-                height="100%"
-                alt="example"
-                src="https://northendwaterfront.com/wp-content/uploads/2018/10/unnamed-7.jpg"
-              />
-            }>
-            <Meta description="How and Where to vote" />
-          </Card>
-        </Link>
-      </div>
-    </>
-  );
-};
-
-//register card
-const RegisterCard = () => {
-  return (
-    <>
-      <div style={{ marginLeft: "22%", marginRight: "22%" }}>
-        <Link to="am-i-registered">
-          <Card
-            hoverable
-            style={cardStyle}
-            cover={
-              <img
-                style={imageStyle}
-                width="100%"
-                height="100%"
-                alt="example"
-                src="http://p1cdn4static.civiclive.com/UserFiles/Servers/Server_178285/Image/Am%20I%20registered%20to%20vote-.jpg"
-              />
-            }>
-            <Meta description="Register to Vote" />
-          </Card>
-        </Link>
-      </div>
-    </>
-  );
-};
-
-// end-route placeholders
-const WhatToBring = () => {
-  return (
-    <Content>
-      <div id="what-to-bring">
-        <VoterId />
-      </div>
-    </Content>
-  );
-};
-
-const HowAndWhere = () => {
-  return (
-    <Content>
-      <div id="how-and-where-placeholder" style={{ width: "80vw", height: '80vh' }}>
-        <PollMap />
-      </div>
-    </Content>
-  );
-};
-
-const Register = () => {
-  return (
-    <Content>
-      <div id="register-placeholder">
-        <RegCheckForm />>
-      </div>
-    </Content>
+    <div style={{ width: "80vw", height: "80vh" }}>
+      <PollMap />
+    </div>
   );
 };
 

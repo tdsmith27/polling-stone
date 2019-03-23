@@ -4,9 +4,6 @@ import { Card } from 'antd';
 import axios from 'axios';
 import CandidateDetail from './CandidateDetail.js'
 
-
-const { Meta } = Card;
-
 const CandidateRouter = (props) => (
   <>
     <Router primary={false}>
@@ -22,9 +19,10 @@ class CandidateCards extends React.Component {
     this.state = {
       candidates: []
     }
+    this.server = process.env.SERVER || 'http://localhost:8000'
   }
   componentWillMount() {
-    axios.get('http://localhost:8000/api/candidateInfoPage')
+    axios.get(`${this.server}/api/candidateInfoPage`)
       .then((info) => {
         this.setState({
           candidates: info.data,
@@ -39,7 +37,7 @@ class CandidateCards extends React.Component {
       <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%', 'backgroundColor': 'black' }}>
         {this.state.candidates.map((candidate, i) => {
           return (
-            <Link to={`candidatedetails/${candidate.lastName}`} style={{width:'23%',margin: '10px auto 10px'}}>
+            <Link to={`candidatedetails/${candidate.lastName.toLowerCase()}`} style={{width:'23%',margin: '10px auto 10px'}} key={i}>
             <Card
               hoverable
               style={{ width: '100%', height: '370px', margin: '10px auto 15px', textAlign: 'center', borderRadius: '3px' }}

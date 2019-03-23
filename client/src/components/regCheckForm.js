@@ -4,6 +4,7 @@ const RegCheckForm = () => {
   return (
     <>
       <iframe
+        title='registration'
         test-id="regCheckForm"
         src="https://verify.vote.org/?partner=111111&campaign=free-tools"
         width="100%"

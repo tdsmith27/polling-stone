@@ -1,17 +1,12 @@
-const router = require("express").Router();
-const db = require("../../db/index.js");
+const router = require('express').Router();
+const db = require('../db/index.js');
 
-router.get("/", (req, res) => {
+router.get('/', (req, res, next) => {
   db.findAllStates(null, (err, results) => {
     if (err) {
-      console.log(err);
-      res.end();
+      next(err);
     } else {
-      //getting an array of objects, turn into an of names
-      let states = [];
-      results.forEach((ele) => {
-        states.push(ele.state)
-      })
+      const states = results.map(ele => ele.state);
       res.status(200).json(states);
     }
   });
