@@ -6,21 +6,31 @@ import dummyData from '../mocklocationdata';
 import $ from 'jquery';
 
 const markerStyle = {
-    'display': 'grid',
-    'textAlign': 'center'
-}
+    display: 'grid',
+    textAlign: 'center'
+};
+
 const formInputStyle = {
     height: '25px',
     width: '150px',
     'textAlign': 'center'
-}
-const mapFormStyle = {
-    position: 'absolute',
-    top: 5, right: 5
-}
+};
+
 const mapContainerStyle = {
-    height: '100%',
+    height: '100%', 
     width: '100%'
+};
+  
+const mapFormStyle = {
+    position: 'absolute', 
+    top: 5, 
+    right: 5
+};
+
+const imageStyle = {
+    gridColumn: 1, 
+    gridRow: 1, 
+    margin: 'auto'
 }
 
 const Map = ReactMapBoxGl({
@@ -92,7 +102,7 @@ class PollMap extends React.Component {
                                         alt=""
                                         height="15"
                                         width="15"
-                                        style={{ 'gridColumn': 1, 'gridRow': 1, margin: 'auto' }} />
+                                        style={imageStyle} />
                                 </div>
                             </Marker>
                         )
@@ -103,4 +113,4 @@ class PollMap extends React.Component {
     }
 }
 
-export default PollMap
+export default PollMap;

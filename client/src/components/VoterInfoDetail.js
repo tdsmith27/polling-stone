@@ -6,7 +6,6 @@ import RegCheckForm from "./regCheckForm";
 import VoterId from "./voterId";
 import PollMap from "./PollMap";
 import "antd/dist/antd.css";
-import "./LandingPage.css";
 
 const { Meta } = Card;
 const { Content } = Layout;
@@ -24,7 +23,7 @@ let VoterInfoDetail = () => {
   return (
     <Layout>
       <SideBar />
-      <Content style={{ height: "100vh", backgroundColor: "#ededed" }}>
+      <Content style={{contentStyle}}>
         <Router primary={false}>
           <VoterInfo path="/" />
           <VoterId path="what-to-bring" />
@@ -39,12 +38,12 @@ let VoterInfoDetail = () => {
 let VoterInfo = () => {
   return (
     <>
-      <div className="card-container">
+      <div style={cardContainer}>
       {voterInfoItems.map((item, key) => (
         <Link to={item[0]} key={`voterInfoCard-${key}`}>
           <Card
             hoverable
-            className="info-card"
+            style={infoCardStyle}
             cover={<img alt={item[1]} src={item[2]} />}>
             <Meta
               title={item[3]}
@@ -60,10 +59,33 @@ let VoterInfo = () => {
 
 const PollLocations = () => {
   return (
-    <div style={{ width: "80vw", height: "80vh" }}>
+    <div style={pollLocationsStyle}>
       <PollMap />
     </div>
   );
+};
+
+const pollLocationsStyle = {
+  width: "80vw", 
+  height: "80vh"
+};
+
+const contentStyle = {
+  height: "100vh", 
+  backgroundColor: "#ededed"
+};
+
+const infoCardStyle = {
+  width: "350px",
+  height: "500px",
+  borderRadius: "7px"
+};
+
+const cardContainer = {
+  display: "flex",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  height: "700px"
 };
 
 export default VoterInfoDetail;

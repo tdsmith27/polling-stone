@@ -31,7 +31,8 @@ const VoterId = () => {
         size={"large"}
         defaultValue={choice}
         onChange={handleChange}
-        style={{ width: 200 }}>
+        style={selectStyle}
+      >
         {states.map((ele, i) => {
           return <Option key={ele}>{ele}</Option>;
         })}
@@ -39,6 +40,10 @@ const VoterId = () => {
       <StateId usaState={choice} />
     </>
   );
+};
+
+const selectStyle = {
+  width: 200
 };
 
 export default VoterId;
