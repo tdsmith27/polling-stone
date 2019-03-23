@@ -53,7 +53,7 @@ app.use((err, req, res, next) => { // eslint-disable-line
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500).send('404 -- Oh no, something broke!');
+  res.status(err.status || 500).send(`404 -- Oh no, something broke!<br><img src='http://66.media.tumblr.com/f4f3553d1bbef33713b3af38d3598436/tumblr_mnu1bxAXC11rf5vsao1_500.gif' />`);// eslint-disable-line
 });
 
 module.exports = app;
