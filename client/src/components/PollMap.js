@@ -70,7 +70,7 @@ class PollMapPin extends React.Component {
           coordinates={this.props.coords}
           anchor="bottom"
           >
-            <img src={pinImg} height="30" width="30" style={pinImgStyle} />
+            <img src={pinImg} height="30" width="30" style={pinImgStyle} alt={"Pin"} />
           </Marker>
           <Popup
           coordinates={this.props.coords}
@@ -93,7 +93,7 @@ class PollMapPin extends React.Component {
           anchor="bottom"
           >
             <div style={pinContainerStyle}>
-              <img src={pinImg} height="30" width="30" style={pinImgStyle} />
+              <img src={pinImg} height="30" width="30" style={pinImgStyle} alt={"Pin"} />
             </div>
           </Marker>
         </div>
@@ -173,7 +173,8 @@ class PollMap extends React.Component {
         if (!this.state.popup) {
           return (
           <>
-            <Map center={this.state.center} zoom={[11]} containerStyle={mapContainerStyle} style="mapbox://styles/mapbox/streets-v8">
+            <Map center={this.state.center} zoom={[11]} containerStyle={mapContainerStyle} style={"mapbox://styles/mapbox/streets-v8"}> {//eslint-disable-line
+            }
               <form onSubmit={this.handleLocation} style={zipFormStyle}>
                 <input onChange={this.handleInput} type="text" placeholder="Search Polls by Zipcode" style={zipcodeInputStyle}></input>
               </form>
@@ -193,7 +194,8 @@ class PollMap extends React.Component {
         } else {
           return (
             <>
-              <Map center={this.state.center} zoom={[11]} containerStyle={mapContainerStyle} style="mapbox://styles/mapbox/streets-v8">
+              <Map center={this.state.center} zoom={[11]} containerStyle={mapContainerStyle} style={"mapbox://styles/mapbox/streets-v8"}> {//eslint-disable-line
+            }
                 <form onSubmit={this.handleLocation} style={zipFormStyle}>
                   <input onChange={this.handleInput} type="text" placeholder="Search Polls by Zipcode" style={zipcodeInputStyle}></input>
                 </form>
@@ -220,7 +222,8 @@ class PollMap extends React.Component {
       } else {
         return (
                 <>
-              <Map center={this.state.center} zoom={[11]} containerStyle={mapContainerStyle} style="mapbox://styles/mapbox/streets-v8">
+              <Map center={this.state.center} zoom={[11]} containerStyle={mapContainerStyle} style={"mapbox://styles/mapbox/streets-v8"}> {//eslint-disable-line
+            }
                 <form onSubmit={this.handleLocation} style={zipFormStyle}>
                   <input onChange={this.handleInput} type="text" placeholder="Search Polls by Zipcode" style={zipcodeInputStyle}></input>
                 </form>
