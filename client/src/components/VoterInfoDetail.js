@@ -19,16 +19,19 @@ const voterInfoItems = [
   ["am-i-registered", "register-to-vote", registration, "Register to Vote", "Find out if you are registered to vote in 30 seconds"]
 ];
 
+const NotFound = () => <div>404 -- Oh no, something broke!<img src='http://66.media.tumblr.com/f4f3553d1bbef33713b3af38d3598436/tumblr_mnu1bxAXC11rf5vsao1_500.gif' alt="penguin-falling" /></div>
+
 let VoterInfoDetail = () => {
   return (
     <Layout>
       <SideBar />
-      <Content style={{contentStyle}}>
+      <Content style={{ contentStyle }}>
         <Router primary={false}>
           <VoterInfo path="/" />
           <VoterId path="what-to-bring" />
           <PollLocations path="how-and-where" />
           <RegCheckForm path="am-i-registered" />
+          <NotFound default={true} />
         </Router>
       </Content>
     </Layout>
@@ -39,19 +42,19 @@ let VoterInfo = () => {
   return (
     <>
       <div style={cardContainer}>
-      {voterInfoItems.map((item, key) => (
-        <Link to={item[0]} key={`voterInfoCard-${key}`}>
-          <Card
-            hoverable
-            style={infoCardStyle}
-            cover={<img alt={item[1]} src={item[2]} />}>
-            <Meta
-              title={item[3]}
-              description={item[4]}
-            />
-          </Card>
-        </Link>
-      ))}
+        {voterInfoItems.map((item, key) => (
+          <Link to={item[0]} key={`voterInfoCard-${key}`}>
+            <Card
+              hoverable
+              style={infoCardStyle}
+              cover={<img alt={item[1]} src={item[2]} />}>
+              <Meta
+                title={item[3]}
+                description={item[4]}
+              />
+            </Card>
+          </Link>
+        ))}
       </div>
     </>
   );
@@ -66,12 +69,12 @@ const PollLocations = () => {
 };
 
 const pollLocationsStyle = {
-  width: "80vw", 
+  width: "80vw",
   height: "80vh"
 };
 
 const contentStyle = {
-  height: "100vh", 
+  height: "100vh",
   backgroundColor: "#ededed"
 };
 

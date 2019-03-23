@@ -7,6 +7,7 @@ import VoterInfoDetail from "./VoterInfoDetail.js";
 import CandidateRouter from "./CandidateCards";
 
 const { Header } = Layout;
+const NotFound = () => <div>404 -- Oh no, something broke!<img src='http://66.media.tumblr.com/f4f3553d1bbef33713b3af38d3598436/tumblr_mnu1bxAXC11rf5vsao1_500.gif' alt="penguin-falling" /></div>
 
 const MainRoutes = props => (
   <>
@@ -14,6 +15,7 @@ const MainRoutes = props => (
       <LandingPage path="/" />
       <CandidateRouter path="candidates/*" />
       <VoterInfoDetail path="voterInfo/*" />
+      <NotFound default={true} />
     </Router>
   </>
 );
