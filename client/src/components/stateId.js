@@ -4,11 +4,6 @@ import { Card, Col, Row } from "antd";
 import Axios from "axios";
 // require('dotenv').config()
 
-const myStyles = {
-  height: "50vh",
-  overflow: "scroll"
-};
-
 const StateId = props => {
   let [usaState, setUsaState] = useState(props.usaState);
   let [inPerson, setInPerson] = useState("In person details here");
@@ -35,22 +30,32 @@ const StateId = props => {
   }
 
   return (
-    <div style={{ background: "#ECECEC", padding: "30px" }}>
+    <div style={stateIdStyle}>
       <h1>{usaState}</h1>
       <Row gutter={16}>
         <Col span={12}>
-          <Card title="In-person Voting" bordered={false} style={myStyles}>
+          <Card title="In-person Voting" bordered={false} style={cardStyle}>
             {renderText(inPerson)}
           </Card>
         </Col>
         <Col span={12}>
-          <Card title="Absentee Voting" bordered={false} style={myStyles}>
+          <Card title="Absentee Voting" bordered={false} style={cardStyle}>
             <p>{renderText(absentee)}</p>
           </Card>
         </Col>
       </Row>
     </div>
   );
+};
+
+const stateIdStyle = {
+  background: "#ECECEC", 
+  padding: "30px"
+};
+
+const cardStyle = {
+  height: "50vh",
+  overflow: "scroll"
 };
 
 export default StateId;

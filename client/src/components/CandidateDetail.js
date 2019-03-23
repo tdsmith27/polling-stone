@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import BiographicCard from './CandidateDetailComponents/BiographicCard.js'
 import PolicyBlock from './CandidateDetailComponents/PolicyBlock.js';
 import Axios from 'axios';
@@ -62,15 +62,30 @@ export default class App extends Component {
     window.scrollTo(0, 0)
   }
   render() {
-    return (
-      <div test-id='ancestor' style={{backgroundColor: '#C0C0C0', padding: '20px', width: '100%' }}>
-        <BiographicCard 
-          bio={this.state.bio} 
-          details={this.state.details}
-          policies={this.state.policies} 
-        />
-        <PolicyBlock policies={this.state.policies} candidate={this.trumpTest}/>
-      </div>
-    )
+    if (this.state.details === "404") {
+      return (
+        <div>
+          404 -- Oh no, something broke!
+        <img src='http://66.media.tumblr.com/f4f3553d1bbef33713b3af38d3598436/tumblr_mnu1bxAXC11rf5vsao1_500.gif' alt="penguin-falling" />
+        </div>
+      )
+    } else {
+      return (
+        <div test-id='ancestor' style={candidateDetailStyle}>
+          <BiographicCard
+            bio={this.state.bio}
+            details={this.state.details}
+            policies={this.state.policies}
+          />
+          <PolicyBlock policies={this.state.policies} candidate={this.trumpTest} />
+        </div>
+      )
+    }
   };
+};
+
+const candidateDetailStyle = {
+  backgroundColor: '#C0C0C0',
+  padding: '20px',
+  width: '100%'
 };

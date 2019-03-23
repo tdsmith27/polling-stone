@@ -17,8 +17,7 @@ app.use((_, res, next) => {
 
 app.use(logger('dev'));
 
-// You can place your routes here, feel free to refactor:
-
+// routes
 const {
   candidates,
   policies,
@@ -48,14 +47,13 @@ app.use((req, res, next) => {
 });
 
 // error handler
-app.use((err, req, res) => {
+app.use((err, req, res, next) => { // eslint-disable-line
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+  res.status(err.status || 500).send(`404 -- Oh no, something broke!<br><img src='http://66.media.tumblr.com/f4f3553d1bbef33713b3af38d3598436/tumblr_mnu1bxAXC11rf5vsao1_500.gif' />`);// eslint-disable-line
 });
 
 module.exports = app;

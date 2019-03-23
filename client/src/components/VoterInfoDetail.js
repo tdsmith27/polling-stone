@@ -6,7 +6,6 @@ import RegCheckForm from "./regCheckForm";
 import VoterId from "./voterId";
 import PollMap from "./PollMap";
 import "antd/dist/antd.css";
-import "./LandingPage.css";
 
 const { Meta } = Card;
 const { Content } = Layout;
@@ -20,16 +19,19 @@ const voterInfoItems = [
   ["am-i-registered", "register-to-vote", registration, "Register to Vote", "Find out if you are registered to vote in 30 seconds"]
 ];
 
+const NotFound = () => <div>404 -- Oh no, something broke!<img src='http://66.media.tumblr.com/f4f3553d1bbef33713b3af38d3598436/tumblr_mnu1bxAXC11rf5vsao1_500.gif' alt="penguin-falling" /></div>
+
 let VoterInfoDetail = () => {
   return (
     <Layout>
       <SideBar />
-      <Content style={{ height: "100vh", backgroundColor: "#ededed" }}>
+      <Content style={{ contentStyle }}>
         <Router primary={false}>
           <VoterInfo path="/" />
           <VoterId path="what-to-bring" />
           <PollLocations path="how-and-where" />
           <RegCheckForm path="am-i-registered" />
+          <NotFound default={true} />
         </Router>
       </Content>
     </Layout>
@@ -39,20 +41,20 @@ let VoterInfoDetail = () => {
 let VoterInfo = () => {
   return (
     <>
-      <div className="card-container">
-      {voterInfoItems.map((item, key) => (
-        <Link to={item[0]} key={`voterInfoCard-${key}`}>
-          <Card
-            hoverable
-            className="info-card"
-            cover={<img alt={item[1]} src={item[2]} />}>
-            <Meta
-              title={item[3]}
-              description={item[4]}
-            />
-          </Card>
-        </Link>
-      ))}
+      <div style={cardContainer}>
+        {voterInfoItems.map((item, key) => (
+          <Link to={item[0]} key={`voterInfoCard-${key}`}>
+            <Card
+              hoverable
+              style={infoCardStyle}
+              cover={<img alt={item[1]} src={item[2]} />}>
+              <Meta
+                title={item[3]}
+                description={item[4]}
+              />
+            </Card>
+          </Link>
+        ))}
       </div>
     </>
   );
@@ -60,10 +62,33 @@ let VoterInfo = () => {
 
 const PollLocations = () => {
   return (
-    <div style={{ width: "80vw", height: "80vh" }}>
+    <div style={pollLocationsStyle}>
       <PollMap />
     </div>
   );
+};
+
+const pollLocationsStyle = {
+  width: "80vw",
+  height: "80vh"
+};
+
+const contentStyle = {
+  height: "100vh",
+  backgroundColor: "#ededed"
+};
+
+const infoCardStyle = {
+  width: "350px",
+  height: "500px",
+  borderRadius: "7px"
+};
+
+const cardContainer = {
+  display: "flex",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  height: "700px"
 };
 
 export default VoterInfoDetail;

@@ -1,8 +1,8 @@
 require('dotenv').config();
 
 const env = process.env.NODE_ENV;
-const config = require('../knexfile')[env || 'development']; //eslint-disable-line
-const knex = require('knex')(config); //eslint-disable-line
+const config = require('../knexfile') //eslint-disable-line
+const knex = require('knex')(config[env]); //eslint-disable-line
 
 const initialConnection = knex('test table')
   .then(() => {
