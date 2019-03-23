@@ -1,16 +1,15 @@
 const router = require('express').Router();
-const db = require('../../db/index.js')
+const db = require('../db/index.js');
 
-router.get('/:state', (req, res) => {
-  let state = req.params.state;
+router.get('/:state', (req, res, next) => {
+  const { state } = req.params;
   db.getStateIdLaws(state, (err, results) => {
     if (err) {
-      console.log('error on voterId API: ', err)
-      res.end()
+      next(err);
     } else {
-      res.send(results)
+      res.status(200).send(results);
     }
-  })
-})
+  });
+});
 
 module.exports = router;

@@ -7,8 +7,9 @@
     "setup": "npm install && cd ./client && npm install ; cd ../server && npm install",
     "test": "echo pwd && cd ./client && npm test ; cd ../server && npm test",
     "launch": "cd ./server && node bin/www & cd ./client && npm run-script start &",
-    "commit": "git-cz",
-    "pm2-start": "npm run setup && cd ./client && npm run build && cd ../server && npm run start"
+    "commit": "npm run lint && git-cz",
+    "pm2-start": "npm run setup && cd ./client && npm run build && cd ../server && npm run start",
+    "lint": "cd server && npm run lint && cd ../client && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,7 @@
   "devDependencies": {
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
-    "nyc": "^13.3.0"
+    "eslint": "^5.12.0"
   },
   "config": {
     "commitizen": {
@@ -31,10 +32,6 @@
     }
   },
   "dependencies": {
-    "chai-http": "^4.2.1",
-    "knex": "^0.16.3",
-    "mocha": "^6.0.2",
-    "pg": "^7.9.0",
-    "react-scripts": "^2.1.8"
+    "dotenv": "^7.0.0"
   }
 }

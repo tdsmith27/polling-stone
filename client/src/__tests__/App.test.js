@@ -1,7 +1,6 @@
 import React from "react";
 import {
   render,
-  fireEvent,
   cleanup,
   waitForElement
 } from "react-testing-library";
@@ -18,14 +17,12 @@ it("should render", async () => {
   expect(text).toBeTruthy();
 });
 
-it("should render an ant card", async () => {
-  const { getByText } = render(<App />);
-  const text = await waitForElement(() => getByText(/Candidates/));
+it("should render an ant card", () => {
+  render(<App />);
   expect.stringContaining("ant-card");
 });
 
-it("should render an image", async () => {
-  const { getByText } = render(<App />);
-  const text = await waitForElement(() => getByText(/Candidates/));
+it("should render an image", () => {
+  render(<App />);
   expect.stringContaining("img");
 });

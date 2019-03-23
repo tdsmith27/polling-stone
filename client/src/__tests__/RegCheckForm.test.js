@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, cleanup, waitForElement, configure } from 'react-testing-library'
+import { render, cleanup, configure } from 'react-testing-library'
 
 // this adds custom jest matchers from jest-dom
 import 'jest-dom/extend-expect'

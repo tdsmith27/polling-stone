@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon bin/www",
-    "test": "nyc mocha"
+    "test": "nyc mocha",
+    "lint": "npx eslint '**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -28,20 +29,28 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
-    "chai-http": "^4.2.1",
     "debug": "^4.1.1",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
-    "puppeteer": "^1.13.0",
+    "http-errors": "^1.7.2",
+    "knex": "^0.16.3",
+    "morgan": "^1.9.1",
+    "pg": "^7.9.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   },
   "devDependencies": {
+    "babel-eslint": "^9.0.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
-    "http-errors": "^1.7.2",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
     "install": "^0.12.2",
     "mocha": "^6.0.2",
-    "morgan": "^1.9.1",
     "npm": "^6.9.0",
     "nyc": "^13.3.0",
     "supertest": "^4.0.0"
