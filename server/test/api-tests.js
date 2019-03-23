@@ -5,7 +5,7 @@ require('dotenv').config();
 const expect = chai.expect; //eslint-disable-line
 const should = chai.should();
 chai.use(chaiHttp);
-const server = process.env.SERVER || 'localhost:8000';
+const server = 'ec2-3-16-229-206.us-east-2.compute.amazonaws.com';
 
 describe('/GET VoterId', () => { //eslint-disable-line
   it('it should GET VoterId requirements by state', () => { //eslint-disable-line
