@@ -37,6 +37,11 @@ app.use('/api/candidateinfopage', candidateInfoPage);
 app.use('/api/bios', bios);
 app.use('/api/voterId/', voterId);
 
+app.use('/candidates/*', express.static(join(__dirname, '../client/build')));
+app.use('/voterinfo/*', express.static(join(__dirname, '../client/build')));
+app.use('/candidates', express.static(join(__dirname, '../client/build')));
+app.use('/voterinfo', express.static(join(__dirname, '../client/build')));
+
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));
