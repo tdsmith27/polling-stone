@@ -5,6 +5,10 @@ import mapboxgl from 'mapbox-gl';
 import dummyData from '../mocklocationdata';
 import $ from 'jquery';
 
+const bg = {
+    backgroundColor: '#27263F'
+}
+
 const markerStyle = {
     display: 'grid',
     textAlign: 'center'

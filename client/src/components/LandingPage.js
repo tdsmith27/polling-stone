@@ -46,7 +46,8 @@ const cardContainerStyle = {
   display: "flex",
   justifyContent: "space-evenly",
   alignItems: "center",
-  height: "700px"
+  height: "700px",
+  backgroundColor: "#27263F"
 };
 
 const cardDescriptionStyle = {

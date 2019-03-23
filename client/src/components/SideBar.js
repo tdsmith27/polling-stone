@@ -9,13 +9,13 @@ let SideBar = () => {
     <Sider style={siderStyle}>
       <Menu mode="inline" style={menuStyle}>
         <Menu.Item key="1">
-          <Link to="what-to-bring">What to Bring</Link>
+          <Link to="what-to-bring" style={textStyle}>What to Bring</Link>
         </Menu.Item>
         <Menu.Item key="3">
-          <Link to="how-and-where">Where and How to Vote</Link>
+          <Link to="how-and-where" style={textStyle}>Where and How to Vote</Link>
         </Menu.Item>
         <Menu.Item key="4">
-          <Link to="am-i-registered">Am I Registered?</Link>
+          <Link to="am-i-registered" style={textStyle}>Am I Registered?</Link>
         </Menu.Item>
       </Menu>
     </Sider>
@@ -23,12 +23,17 @@ let SideBar = () => {
 };
 
 const siderStyle = {
-  background: "#fff",
+  backgroundColor: "#DEE5E5",
   width: "200px"
 };
 
 const menuStyle = {
-  height: "100%"
+  height: "100%",
+  backgroundColor: "#DEE5E5",
 };
+
+const textStyle = {
+  color: '#000'
+}
 
 export default SideBar;
