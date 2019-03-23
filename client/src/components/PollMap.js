@@ -4,6 +4,7 @@ import zipcode from 'zipcodes';
 import mapboxgl from 'mapbox-gl';
 import dummyData from '../mocklocationdata';
 import $ from 'jquery';
+import Axios from 'axios';
 
 
 
@@ -17,7 +18,12 @@ class PollMap extends React.Component {
             markers: [[-97.757729, 30.260281], [-97.740341, 30.274702], [-97.753317, 30.275432]],
             center: [-97.749672, 30.266375],
             input: '',
-            zip: '78701'
+            zip: '78701',
+            ///////////////Properties for when Polling locations are realeased to googles API/////////////////
+            // street: '', 
+            // city: '',
+            // state: '',
+            // election: ''
         }
         this.handleLocation = this.handleLocation.bind(this)
         this.handleInput = this.handleInput.bind(this)
@@ -25,8 +31,26 @@ class PollMap extends React.Component {
         this.handleMouseLeave = this.handleMouseLeave.bind(this)
     } 
 
-    handleLocation(e){
+    async handleLocation(e){
         e.preventDefault()
+        ////////////////////////////////uncomment to make work when polling locations are released////////////
+        // let street = '1263 Pacific Ave.'
+        // let city = 'Kansas City'
+        // let state = 'KS'
+        // let election = '2000'
+        // let value = await Axios.get(`https://www.googleapis.com/civicinfo/v2/voterinfo?key=AIzaSyCHbtdkMNeSPRf7uMjp_uJzscPhOD5ZZGw&address=${street}%20${city}%20${state}&electionId=${election}`)
+        // let newNew = value.data.pollingLocations.map((poll) => {
+        //     let {line1, city, state, zip} = poll.address
+        //     let pollAddress = `${line1}, ${city}, ${state}, ${zip}`
+        //     return pollAddress
+        // })
+        // console.log(newNew);
+        // let newValue = await newNew.map(async(address) => {
+        //     let coordinates = await Axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyCHbtdkMNeSPRf7uMjp_uJzscPhOD5ZZGw`);
+        //     return [coordinates.data.results[0].geometry.location.lng, coordinates.data.results[0].geometry.location.lat]
+        // })
+        //         console.log(await newValue[0]);
+
         if (dummyData[this.state.input]){
           let newMarkers = [];
           dummyData[this.state.input].locations.forEach((location) => {
