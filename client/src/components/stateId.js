@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 import { Card, Col, Row } from "antd";
 import Axios from "axios";
-require('dotenv').config()
+// require('dotenv').config()
 
 const myStyles = {
   height: "50vh",

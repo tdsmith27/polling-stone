@@ -3,7 +3,7 @@ import { Router, Link } from "@reach/router";
 import { Card } from 'antd';
 import axios from 'axios';
 import CandidateDetail from './CandidateDetail.js'
-require('dotenv').config();
+//require('dotenv').config()
 
 
 const CandidateRouter = (props) => (

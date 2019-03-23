@@ -3,7 +3,7 @@ import Axios from "axios";
 import { Select } from "antd";
 import StateId from "./stateId";
 import "antd/dist/antd.css";
-require('dotenv').config()
+// require('dotenv').config()
 
 
 const VoterId = () => {
