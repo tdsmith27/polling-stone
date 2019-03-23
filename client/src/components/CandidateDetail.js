@@ -40,7 +40,7 @@ export default class App extends Component {
       'schriner': 26
     };
     this.vote = this.candidateDictionary[this.props.candId.toLowerCase()] || Math.floor(Math.random()*25);
-    this.server = process.env.REACT_APP_SERVER || 'localhost:8000';
+    this.server = 'ec2-3-16-229-206.us-east-2.compute.amazonaws.com';
   };
   betterThanDemocracy() {
     Axios.get(`http://${this.server}/api/candidates/${this.vote}`)
