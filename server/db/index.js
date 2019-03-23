@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 
 const env = process.env.NODE_ENV;
 const config = require('../knexfile')[env || 'development']; //eslint-disable-line

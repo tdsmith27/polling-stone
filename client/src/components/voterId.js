@@ -13,7 +13,7 @@ const VoterId = () => {
   let [choice, setChoice] = useState("Alabama");
 
   useEffect(() => {
-    const server = process.env.SERVER || 'localhost:8000';
+    const server = process.env.REACT_APP_SERVER || 'localhost:8000';
     const api = `http://${server}/api/voter`;
     Axios.get(api)
       .then(results => {

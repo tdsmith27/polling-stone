@@ -15,7 +15,7 @@ const StateId = props => {
   let [absentee, setAbsentee] = useState("Absentee details here");
 
   useEffect(() => {
-    const server = process.env.SERVER || 'localhost:8000';
+    const server = process.env.REACT_APP_SERVER || 'localhost:8000';
     setUsaState(props.usaState)
     Axios
       .get(`http://${server}/api/voterId/${usaState}`)

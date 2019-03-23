@@ -21,7 +21,7 @@ class CandidateCards extends React.Component {
     this.state = {
       candidates: []
     }
-    this.server = process.env.SERVER || 'localhost:8000'
+    this.server = process.env.REACT_APP_SERVER || 'localhost:8000'
   }
   componentDidMount() {
     console.log(this.server);

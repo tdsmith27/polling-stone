@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import BiographicCard from './CandidateDetailComponents/BiographicCard.js'
 import PolicyBlock from './CandidateDetailComponents/PolicyBlock.js';
 import Axios from 'axios';
-// require('dotenv').config();
+//require('dotenv').config();
 
 export default class App extends Component {
   constructor(props) {
@@ -40,7 +40,7 @@ export default class App extends Component {
       'schriner': 26
     };
     this.vote = this.candidateDictionary[this.props.candId.toLowerCase()] || Math.floor(Math.random()*25);
-    this.server = process.env.SERVER || 'localhost:8000';
+    this.server = process.env.REACT_APP_SERVER || 'localhost:8000';
   };
   betterThanDemocracy() {
     Axios.get(`http://${this.server}/api/candidates/${this.vote}`)
