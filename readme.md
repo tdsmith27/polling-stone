@@ -3,7 +3,7 @@
 A Voting App which gives users candidate information as well as state laws for their location
 
 
-![](http://g.recordit.co/vgptcjskeb.gif)
+![GIF](http://g.recordit.co/vgptcjskeb.gif)
 
 
 ## Getting Started
