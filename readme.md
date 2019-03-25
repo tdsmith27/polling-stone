@@ -2,9 +2,9 @@
 
 A Voting App which gives users candidate information as well as state laws for their location
 
-```
+
 ![](http://recordit.co/vgptcjskeb)
-```
+
 
 ## Getting Started
 
