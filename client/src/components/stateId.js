@@ -31,7 +31,7 @@ const StateId = props => {
 
   return (
     <div style={stateIdStyle}>
-      <h1>{usaState}</h1>
+      <h1 style={textStyle}>{usaState}</h1>
       <Row gutter={16}>
         <Col span={12}>
           <Card title="In-person Voting" bordered={false} style={cardStyle}>
@@ -48,8 +48,12 @@ const StateId = props => {
   );
 };
 
+const textStyle = {
+  color: "#FFF"
+}
+
 const stateIdStyle = {
-  background: "#ECECEC", 
+  background: "#27263F", 
   padding: "30px"
 };
 

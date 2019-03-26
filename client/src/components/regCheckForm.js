@@ -1,8 +1,12 @@
 import React from 'react';
 
+const bg = {
+  backgroundColor: '#27263F'
+}
+
 const RegCheckForm = () => {
   return (
-    <>
+    <div style={bg}>
       <iframe
         title='registration'
         test-id="regCheckForm"
@@ -12,7 +16,7 @@ const RegCheckForm = () => {
         frameBorder="0"
         height="1200px" >
       </iframe>
-    </>
+    </div>
   )
 }
 

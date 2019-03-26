@@ -1,10 +1,7 @@
 # The Polling Stone
-
 A Voting App which gives users candidate information as well as state laws for their location
 
-```
-GIF PLACEHOLDER
-```
+![Polling-Stone](http://g.recordit.co/vgptcjskeb.gif)
 
 ## Getting Started
 
