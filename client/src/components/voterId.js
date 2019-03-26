@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { Select } from "antd";
 import StateId from "./stateId";
-
 import "antd/dist/antd.css";
 
 const VoterId = () => {
@@ -12,7 +11,8 @@ const VoterId = () => {
   let [choice, setChoice] = useState("Alabama");
 
   useEffect(() => {
-    const api = "http://localhost:8000/api/voter";
+    const server = 'ec2-3-16-229-206.us-east-2.compute.amazonaws.com';
+    const api = `http://${server}/api/voter`;
     Axios.get(api)
       .then(results => {
         let sorted = results.data.sort();

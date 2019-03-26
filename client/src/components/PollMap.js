@@ -5,21 +5,6 @@ import mapboxgl from 'mapbox-gl';
 import dummyData from '../mocklocationdata';
 import pinImg from './logo.svg';
 
-const bg = {
-    backgroundColor: '#27263F'
-}
-
-const markerStyle = {
-    display: 'grid',
-    textAlign: 'center'
-};
-
-const formInputStyle = {
-    height: '25px',
-    width: '150px',
-    'textAlign': 'center'
-};
-
 const pinImgStyle = {
    gridColumn: 1,
    gridRow: 1, 

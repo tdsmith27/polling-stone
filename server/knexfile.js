@@ -1,5 +1,4 @@
-const path = require('path');
-require('dotenv').config(path.join(__dirname, './.env'));
+require('dotenv').config();
 const knex = require('knex'); //eslint-disable-line
 
 const options = {

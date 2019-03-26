@@ -22,10 +22,10 @@ class CandidateCards extends React.Component {
     this.state = {
       candidates: []
     }
-    this.server = process.env.SERVER || 'http://localhost:8000'
+    this.server = 'ec2-3-16-229-206.us-east-2.compute.amazonaws.com'
   }
-  componentWillMount() {
-    axios.get(`${this.server}/api/candidateInfoPage`)
+  componentDidMount() {
+    axios.get(`http://${this.server}/api/candidateInfoPage`)
       .then((info) => {
         this.setState({
           candidates: info.data,
