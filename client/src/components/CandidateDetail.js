@@ -46,9 +46,6 @@ export default class App extends Component {
       this.setState({ details: "404" })
     } 
     else {
-      Axios.get(`${this.server}/api/candidates/${this.vote}`)
-        .then(data => this.setState({ details: data.data[0] }))
-        .catch(err => console.log(err));
       Axios.get(`http://${this.server}/api/candidates/${this.vote}`)
       .then(data => this.setState({details: data.data[0]}) )
       .catch(err => console.log(err));
