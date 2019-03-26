@@ -3,8 +3,7 @@ import React from 'react';
 import zipcode from 'zipcodes';
 import mapboxgl from 'mapbox-gl';
 import dummyData from '../mocklocationdata';
-
-import $ from 'jquery';
+import pinImg from './logo.svg';
 
 const bg = {
     backgroundColor: '#27263F'
@@ -20,8 +19,6 @@ const formInputStyle = {
     width: '150px',
     'textAlign': 'center'
 };
-
-import pinImg from './logo.svg';
 
 const pinImgStyle = {
    gridColumn: 1,
