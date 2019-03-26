@@ -22,7 +22,7 @@ const MainRoutes = props => (
 
 const Head = props => (
   <>
-    <Header test-id='header' className="header" >
+    <Header test-id='header' className="header" style={menuStyle} >
       <Menu
         theme="dark"
         mode="horizontal"
@@ -30,13 +30,13 @@ const Head = props => (
         style={menuStyle}
       >
         <Menu.Item key="1">
-          <Link to="/">Home</Link>
+          <Link to="/" style={textStyle}>Home</Link>
         </Menu.Item>
         <Menu.Item key="2">
-          <Link to="candidates">Candidates</Link>
+          <Link to="candidates" style={textStyle}>Candidates</Link>
         </Menu.Item>
         <Menu.Item key="3">
-          <Link to="voterInfo">Voter Info</Link>
+          <Link to="voterInfo" style={textStyle}>Voter Info</Link>
         </Menu.Item>
       </Menu>
     </Header>
@@ -45,7 +45,12 @@ const Head = props => (
 
 
 const menuStyle = {
-  lineHeight: '64px'
+  lineHeight: '64px',
+  backgroundColor: '#DEE5E5'
+};
+
+const textStyle = {
+  color: '#000'
 };
 
 export { Head, MainRoutes };

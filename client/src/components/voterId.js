@@ -26,7 +26,7 @@ const VoterId = () => {
   }
 
   return (
-    <>
+    <div style={selectContainer}>
       <Select
         size={"large"}
         defaultValue={choice}
@@ -38,12 +38,16 @@ const VoterId = () => {
         })}
       </Select>
       <StateId usaState={choice} />
-    </>
+    </div>
   );
 };
 
 const selectStyle = {
-  width: 200
+  width: 200,
 };
+
+const selectContainer = {
+  backgroundColor: '#27263F'
+}
 
 export default VoterId;
