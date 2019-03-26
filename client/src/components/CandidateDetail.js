@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import BiographicCard from './CandidateDetailComponents/BiographicCard.js'
 import PolicyBlock from './CandidateDetailComponents/PolicyBlock.js';
 import Axios from 'axios';
-//require('dotenv').config();
 
 export default class App extends Component {
   constructor(props) {
@@ -39,11 +38,18 @@ export default class App extends Component {
       'kroell': 25,
       'schriner': 26
     };
-    this.vote = this.candidateDictionary[this.props.candId.toLowerCase()] || Math.floor(Math.random()*25);
+    this.vote = this.candidateDictionary[this.props.candId.toLowerCase()] ||"404";
     this.server = 'ec2-3-16-229-206.us-east-2.compute.amazonaws.com';
   };
   betterThanDemocracy() {
-    Axios.get(`http://${this.server}/api/candidates/${this.vote}`)
+    if (this.vote === "404") {
+      this.setState({ details: "404" })
+    } 
+    else {
+      Axios.get(`${this.server}/api/candidates/${this.vote}`)
+        .then(data => this.setState({ details: data.data[0] }))
+        .catch(err => console.log(err));
+      Axios.get(`http://${this.server}/api/candidates/${this.vote}`)
       .then(data => this.setState({details: data.data[0]}) )
       .catch(err => console.log(err));
 
@@ -55,6 +61,7 @@ export default class App extends Component {
         .then(data => this.setState({policies: data.data[0]}))
         .catch(err => console.log(err));
   }
+}
   componentDidMount() {
     this.betterThanDemocracy();
   }
