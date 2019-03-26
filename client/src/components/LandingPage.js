@@ -47,7 +47,7 @@ const cardContainerStyle = {
   justifyContent: "space-evenly",
   alignItems: "center",
   height: "700px",
-  backgroundColor: "#27263F"
+  // backgroundColor: "#27263F"
 };
 
 const cardDescriptionStyle = {

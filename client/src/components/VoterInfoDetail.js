@@ -70,7 +70,7 @@ const PollLocations = () => {
 
 const pollLocationsStyle = {
   width: "80vw",
-  height: "99vh"
+  height: "100vh"
 };
 
 const contentStyle = {
@@ -88,8 +88,7 @@ const cardContainer = {
   display: "flex",
   justifyContent: "space-evenly",
   alignItems: "center",
-  backgroundColor: "#27263F",
-  height: "700px"
+  height: "750px"
 };
 
 export default VoterInfoDetail;

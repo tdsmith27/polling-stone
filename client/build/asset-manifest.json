@@ -1,0 +1,21 @@
+{
+  "main.css": "/static/css/main.c0e17c4c.chunk.css",
+  "main.js": "/static/js/main.12081796.chunk.js",
+  "main.js.map": "/static/js/main.12081796.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+  "static/css/2.0ef67fd6.chunk.css": "/static/css/2.0ef67fd6.chunk.css",
+  "static/js/2.cb952168.chunk.js": "/static/js/2.cb952168.chunk.js",
+  "static/js/2.cb952168.chunk.js.map": "/static/js/2.cb952168.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.a77ad1fbef7aa0305620abedcdf5d35c.js": "/precache-manifest.a77ad1fbef7aa0305620abedcdf5d35c.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/2.0ef67fd6.chunk.css.map": "/static/css/2.0ef67fd6.chunk.css.map",
+  "static/css/main.c0e17c4c.chunk.css.map": "/static/css/main.c0e17c4c.chunk.css.map",
+  "static/media/candidates.jpg": "/static/media/candidates.6674a403.jpg",
+  "static/media/iVoted.png": "/static/media/iVoted.7a29204f.png",
+  "static/media/logo.svg": "/static/media/logo.e27192cb.svg",
+  "static/media/polls.jpg": "/static/media/polls.6c262146.jpg",
+  "static/media/registration.jpeg": "/static/media/registration.fb2361d1.jpeg",
+  "static/media/voting.jpg": "/static/media/voting.45586c96.jpg"
+}

@@ -30,13 +30,13 @@ const Head = props => (
         style={menuStyle}
       >
         <Menu.Item key="1">
-          <Link to="/" style={textStyle}>Home</Link>
+          <Link to="/">Home</Link>
         </Menu.Item>
         <Menu.Item key="2">
-          <Link to="candidates" style={textStyle}>Candidates</Link>
+          <Link to="candidates" >Candidates</Link>
         </Menu.Item>
         <Menu.Item key="3">
-          <Link to="voterInfo" style={textStyle}>Voter Info</Link>
+          <Link to="voterInfo">Voter Info</Link>
         </Menu.Item>
       </Menu>
     </Header>
@@ -46,11 +46,7 @@ const Head = props => (
 
 const menuStyle = {
   lineHeight: '64px',
-  backgroundColor: '#DEE5E5'
 };
 
-const textStyle = {
-  color: '#000'
-};
 
 export { Head, MainRoutes };

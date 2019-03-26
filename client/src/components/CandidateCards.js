@@ -63,7 +63,7 @@ const candidateCardDivStyle = {
   display: 'flex',
   flexWrap: 'wrap',
   width: '100%',
-  backgroundColor: '#27263F'
+  backgroundColor: 'black'
 };
 
 const linkStyle = {

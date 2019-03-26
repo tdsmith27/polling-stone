@@ -89,7 +89,7 @@ export default class App extends Component {
 };
 
 const candidateDetailStyle = {
-  backgroundColor: '#27263F',
+  backgroundColor: '#C0C0C0',
   padding: '20px',
   width: '100%'
 };

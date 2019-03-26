@@ -23,13 +23,12 @@ let SideBar = () => {
 };
 
 const siderStyle = {
-  backgroundColor: "#DEE5E5",
+  backgroundColor: "#fff",
   width: "200px"
 };
 
 const menuStyle = {
   height: "100%",
-  backgroundColor: "#DEE5E5",
 };
 
 const textStyle = {
