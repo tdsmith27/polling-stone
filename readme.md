@@ -6,7 +6,7 @@ A Voting App which gives users candidate information as well as state laws for t
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ## Prerequisites
-This application is built with Node and will require Node to be installed to run. To install Node, follow the instructions [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) <br>
+This application is built with Node and will require Node to be installed to run. To install Node, follow the [instructions](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) <br>
 *installing with nvm recommended*
 
 ### Installing
